@@ -199,6 +199,63 @@ body {
 }
 .note strong { color: var(--ink); }
 
+/* ===== Consult CTA ===== */
+.hub-consult {
+  background: var(--ink);
+  color: var(--white);
+  padding: clamp(60px, 10vw, 100px) clamp(20px, 4vw, 24px);
+  text-align: center;
+}
+.hub-consult .consult-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.consult-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+.hub-consult h2 {
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 800;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+.hub-consult p {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.9;
+  margin-bottom: 32px;
+}
+.btn-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 36px;
+  background: #06C755;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  border-radius: 100px;
+  transition: all 0.2s ease;
+  letter-spacing: 0.03em;
+}
+.btn-line:hover {
+  background: #05B04D;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(6, 199, 85, 0.35);
+}
+.consult-note {
+  margin-top: 24px;
+  font-size: 12px !important;
+  color: rgba(255, 255, 255, 0.55) !important;
+  margin-bottom: 0 !important;
+}
+
 /* ===== Footer ===== */
 footer {
   background: var(--white);
@@ -311,6 +368,16 @@ footer .legal { margin-top: 8px; opacity: 0.7; }
       <strong>勤務時間：</strong>10:00〜19:00 または 11:00〜20:00（実働8時間ぴったり・定時退社）<br>
       <strong>勤務地：</strong>首都圏（東京・神奈川・千葉・埼玉）／ 北海道全域・静岡全域 急募中
     </div>
+  </div>
+</section>
+
+<section class="hub-consult">
+  <div class="consult-inner">
+    <div class="consult-label">— STILL DECIDING?</div>
+    <h2>雇用形態が決めきれない、<br>まずは話を聞いてみたい方へ。</h2>
+    <p>どの働き方が自分に合うかわからない場合、まずはLINEで気軽にご相談ください。<br>担当者がライフスタイル・希望をうかがって、最適な働き方をご提案します。</p>
+    <a href="#" class="btn-line" data-action="line">LINEで相談する →</a>
+    <p class="consult-note">※ 1〜2営業日以内にご返信します</p>
   </div>
 </section>
 
