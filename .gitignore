@@ -1,0 +1,14 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Node (将来導入時)
+node_modules/
+
+# Local dev
+*.local
+*.log

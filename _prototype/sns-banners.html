@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SNS求人バナー素材集</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+JP:wght@400;500;700;900&family=Bebas+Neue&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background: #DEDAD2;
+  padding: 40px 20px;
+  font-feature-settings: "palt";
+}
+.page-title {
+  max-width: 1100px;
+  margin: 0 auto 40px;
+  font-weight: 900;
+  font-size: 24px;
+  color: #1A1A1A;
+}
+.page-note {
+  max-width: 1100px;
+  margin: 0 auto 40px;
+  background: #fff;
+  padding: 24px 28px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.9;
+  color: #333;
+}
+.page-note strong { color: #E8281E; }
+.banner-section {
+  max-width: 1100px;
+  margin: 0 auto 56px;
+}
+.banner-heading {
+  font-weight: 900;
+  font-size: 18px;
+  color: #1A1A1A;
+  margin-bottom: 8px;
+  padding-left: 12px;
+  border-left: 4px solid #E8281E;
+}
+.banner-sub {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 20px;
+  padding-left: 16px;
+}
+.banner-wrap {
+  display: inline-block;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  margin-bottom: 12px;
+}
+
+/* ============ 共通バナースタイル ============ */
+.banner {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* ---- 正方形 1080x1080 (表示は540) ---- */
+.sq {
+  width: 540px;
+  height: 540px;
+}
+/* ---- 縦長 1080x1920 (表示は360x640) ---- */
+.vert {
+  width: 360px;
+  height: 640px;
+}
+/* ---- 横長 1600x900 (表示は640x360) ---- */
+.horiz {
+  width: 640px;
+  height: 360px;
+}
+
+/* ===== バナーA:急募(赤黒) ===== */
+.b-urgent {
+  background: #111;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.b-urgent::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(-45deg, transparent, transparent 24px, rgba(232,40,30,0.08) 24px, rgba(232,40,30,0.08) 48px);
+}
+.b-urgent-inner { position: relative; z-index: 2; padding: 8%; }
+.b-urgent .badge {
+  display: inline-block;
+  background: #E8281E;
+  color: #fff;
+  font-family: 'Anton', sans-serif;
+  letter-spacing: 0.1em;
+  padding: 6px 18px;
+  margin-bottom: 6%;
+  font-size: 1em;
+}
+.b-urgent h2 {
+  font-family: 'Anton', sans-serif;
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: 0.01em;
+  margin-bottom: 6%;
+}
+.b-urgent .red { color: #E8281E; }
+.b-urgent .yellow { color: #FFD400; }
+.b-urgent .outline { -webkit-text-stroke: 1.5px #fff; color: transparent; }
+.b-urgent .area {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 6%;
+}
+.b-urgent .area span {
+  font-family: 'Anton', sans-serif;
+  border: 2px solid #fff;
+  padding: 4px 16px;
+  letter-spacing: 0.05em;
+}
+.b-urgent .pay {
+  font-family: 'Anton', sans-serif;
+  color: #FFD400;
+  line-height: 1;
+}
+.b-urgent .pay .small { font-size: 0.4em; color: #fff; }
+.b-urgent .foot {
+  position: absolute;
+  bottom: 6%;
+  left: 8%;
+  right: 8%;
+  font-weight: 700;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  padding-top: 4%;
+  z-index: 2;
+}
+
+/* サイズ別フォント:急募 正方形 */
+.sq.b-urgent .badge { font-size: 20px; }
+.sq.b-urgent h2 { font-size: 58px; }
+.sq.b-urgent .area span { font-size: 24px; }
+.sq.b-urgent .pay { font-size: 56px; }
+.sq.b-urgent .foot { font-size: 15px; }
+/* 縦長 */
+.vert.b-urgent .badge { font-size: 16px; }
+.vert.b-urgent h2 { font-size: 44px; }
+.vert.b-urgent .area span { font-size: 18px; }
+.vert.b-urgent .pay { font-size: 44px; }
+.vert.b-urgent .foot { font-size: 12px; }
+/* 横長 */
+.horiz.b-urgent h2 { font-size: 46px; }
+.horiz.b-urgent .badge { font-size: 16px; margin-bottom: 3%; }
+.horiz.b-urgent .area span { font-size: 18px; }
+.horiz.b-urgent .pay { font-size: 40px; }
+.horiz.b-urgent .foot { font-size: 13px; bottom: 5%; }
+
+/* ===== バナーB:両立(オーガニック) ===== */
+.b-balance {
+  background: linear-gradient(140deg, #C97B5C 0%, #A45A3D 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.b-balance::after {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(255,255,255,0.15), transparent 70%);
+  top: -10%; right: -10%;
+  border-radius: 50%;
+}
+.b-balance-inner { position: relative; z-index: 2; padding: 9%; }
+.b-balance .tag {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.5);
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 7%;
+  font-weight: 700;
+}
+.b-balance h2 {
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-weight: 900;
+  line-height: 1.4;
+  margin-bottom: 7%;
+}
+.b-balance .pts { display: flex; flex-direction: column; gap: 8px; }
+.b-balance .pts div {
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.b-balance .pts div::before { content: '◆'; font-size: 0.7em; }
+.b-balance .foot {
+  position: absolute;
+  bottom: 7%;
+  left: 9%;
+  font-weight: 700;
+  background: #fff;
+  color: #A45A3D;
+  padding: 8px 20px;
+  border-radius: 100px;
+  z-index: 2;
+}
+.sq.b-balance .tag { font-size: 16px; }
+.sq.b-balance h2 { font-size: 40px; }
+.sq.b-balance .pts div { font-size: 18px; }
+.sq.b-balance .foot { font-size: 15px; }
+.vert.b-balance .tag { font-size: 14px; }
+.vert.b-balance h2 { font-size: 33px; }
+.vert.b-balance .pts div { font-size: 15px; }
+.vert.b-balance .foot { font-size: 13px; }
+.horiz.b-balance .tag { font-size: 14px; margin-bottom: 3%; }
+.horiz.b-balance h2 { font-size: 34px; }
+.horiz.b-balance .pts div { font-size: 15px; }
+.horiz.b-balance .foot { font-size: 13px; bottom: 6%; }
+
+/* ===== バナーC:副業(モダン) ===== */
+.b-side {
+  background: #FAFAF7;
+  color: #161614;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.b-side::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(#E5E3DB 1px, transparent 1px), linear-gradient(90deg, #E5E3DB 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.5;
+}
+.b-side-inner { position: relative; z-index: 2; padding: 9%; }
+.b-side .label {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.2em;
+  color: #FF5A1F;
+  margin-bottom: 5%;
+}
+.b-side h2 {
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 6%;
+  letter-spacing: -0.02em;
+}
+.b-side .strike { text-decoration: line-through; text-decoration-color: #FF5A1F; text-decoration-thickness: 3px; color: #888; }
+.b-side .orange { color: #FF5A1F; }
+.b-side .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.b-side .chips span {
+  background: #161614;
+  color: #fff;
+  padding: 5px 14px;
+  font-size: 0.8em;
+  font-weight: 700;
+}
+.b-side .foot {
+  position: absolute;
+  bottom: 9%;
+  left: 9%;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.1em;
+  color: #161614;
+  z-index: 2;
+}
+.sq.b-side .label { font-size: 18px; }
+.sq.b-side h2 { font-size: 48px; }
+.sq.b-side .chips span { font-size: 15px; }
+.sq.b-side .foot { font-size: 20px; }
+.vert.b-side .label { font-size: 15px; }
+.vert.b-side h2 { font-size: 38px; }
+.vert.b-side .chips span { font-size: 12px; }
+.vert.b-side .foot { font-size: 16px; }
+.horiz.b-side .label { font-size: 15px; margin-bottom: 2%; }
+.horiz.b-side h2 { font-size: 38px; }
+.horiz.b-side .chips span { font-size: 13px; }
+.horiz.b-side .foot { font-size: 16px; bottom: 7%; }
+
+/* ===== バナーD:汎用(ネイビー) ===== */
+.b-main {
+  background: #0A1F44;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.b-main::after {
+  content: '';
+  position: absolute;
+  width: 70%; height: 70%;
+  background: radial-gradient(circle, rgba(255,78,58,0.2), transparent 70%);
+  bottom: -20%; left: -10%;
+  border-radius: 50%;
+}
+.b-main-inner { position: relative; z-index: 2; padding: 9%; }
+.b-main .tag {
+  display: inline-block;
+  background: rgba(255,78,58,0.15);
+  border: 1px solid rgba(255,78,58,0.4);
+  color: #FF8A7A;
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 7%;
+  font-weight: 700;
+}
+.b-main h2 {
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-weight: 900;
+  line-height: 1.3;
+  margin-bottom: 7%;
+}
+.b-main .accent { color: #FF4E3A; }
+.b-main .pay {
+  color: #fff;
+  font-weight: 900;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+.b-main .pay .big { font-family: 'Anton', sans-serif; color: #FFD400; }
+.b-main .foot {
+  position: absolute;
+  bottom: 7%; left: 9%; right: 9%;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 4%;
+  font-weight: 700;
+  z-index: 2;
+}
+.sq.b-main .tag { font-size: 16px; }
+.sq.b-main h2 { font-size: 42px; }
+.sq.b-main .pay { font-size: 22px; }
+.sq.b-main .pay .big { font-size: 52px; }
+.sq.b-main .foot { font-size: 15px; }
+.vert.b-main .tag { font-size: 14px; }
+.vert.b-main h2 { font-size: 34px; }
+.vert.b-main .pay { font-size: 18px; }
+.vert.b-main .pay .big { font-size: 42px; }
+.vert.b-main .foot { font-size: 12px; }
+.horiz.b-main .tag { font-size: 14px; margin-bottom: 3%; }
+.horiz.b-main h2 { font-size: 34px; }
+.horiz.b-main .pay { font-size: 18px; }
+.horiz.b-main .pay .big { font-size: 40px; }
+.horiz.b-main .foot { font-size: 13px; bottom: 6%; }
+
+.size-tag {
+  display: inline-block;
+  background: #1A1A1A;
+  color: #fff;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.1em;
+}
+.banner-row {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.banner-col { display: flex; flex-direction: column; }
+</style>
+</head>
+<body>
+
+<div class="page-title">📱 SNS求人バナー素材集(全4デザイン × 3サイズ)</div>
+
+<div class="page-note">
+  <strong>使い方:</strong>各バナーを画面に表示し、スクリーンショットを撮るか、ブラウザの印刷機能でPNG保存してください。表示は実寸の50%(正方形は540px=実寸1080px相当)です。高解像度で書き出す場合は、ブラウザのズームを200%にしてからスクショすると、SNS推奨サイズ(1080px等)で取得できます。<br><br>
+  <strong>サイズ用途:</strong>正方形=Instagram/Facebookフィード｜縦長=ストーリーズ/Reels/TikTok｜横長=X(Twitter)<br>
+  <strong>注意:</strong>すべて性別限定表現を避け、確認済みの条件のみを記載しています。会社名・連絡先・応募先URLは、実際の投稿時にキャプション側で補ってください。
+</div>
+
+<!-- ===== A:急募 ===== -->
+<div class="banner-section">
+  <div class="banner-heading">① 急募バナー(北海道・静岡)</div>
+  <div class="banner-sub">緊急性・高報酬を訴求。赤×黒×イエローのインパクト重視デザイン。</div>
+  <div class="banner-row">
+    <div class="banner-col">
+      <span class="size-tag">SQUARE 1080×1080</span>
+      <div class="banner-wrap">
+        <div class="banner sq b-urgent">
+          <div class="b-urgent-inner">
+            <span class="badge">● 急募</span>
+            <h2><span class="outline">今、</span><span class="red">人手不足。</span><br><span class="yellow">だから稼げる。</span></h2>
+            <div class="area"><span>北海道 全域</span><span>静岡 全域</span></div>
+            <div class="pay">¥15,000<span class="small">〜/日</span></div>
+          </div>
+          <div class="foot">未経験OK｜出張手当・旅費支給｜実働8h</div>
+        </div>
+      </div>
+    </div>
+    <div class="banner-col">
+      <span class="size-tag">VERTICAL 1080×1920</span>
+      <div class="banner-wrap">
+        <div class="banner vert b-urgent">
+          <div class="b-urgent-inner">
+            <span class="badge">● 急募</span>
+            <h2><span class="outline">今、</span><br><span class="red">人手不足。</span><br><span class="yellow">だから<br>稼げる。</span></h2>
+            <div class="area"><span>北海道</span><span>静岡</span></div>
+            <div class="pay">¥15,000<span class="small">〜/日</span></div>
+          </div>
+          <div class="foot">未経験OK｜出張手当あり｜実働8h</div>
+        </div>
+      </div>
+    </div>
+    <div class="banner-col">
+      <span class="size-tag">HORIZONTAL 1600×900</span>
+      <div class="banner-wrap">
+        <div class="banner horiz b-urgent">
+          <div class="b-urgent-inner">
+            <span class="badge">● 急募</span>
+            <h2><span class="red">人手不足の今、</span><span class="yellow">稼げる。</span></h2>
+            <div class="area"><span>北海道 全域</span><span>静岡 全域</span></div>
+            <div class="pay">¥15,000<span class="small">〜/日</span></div>
+          </div>
+          <div class="foot">未経験OK｜出張手当・旅費支給｜実働8時間</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== B:両立 ===== -->
+<div class="banner-section">
+  <div class="banner-heading">② 両立バナー(子育て・家庭との両立)</div>
+  <div class="banner-sub">温かみのあるオーガニックデザイン。性別限定せず「両立」を訴求。</div>
+  <div class="banner-row">
+    <div class="banner-col">
+      <span class="size-tag">SQUARE 1080×1080</span>
+      <div class="banner-wrap">
+        <div class="banner sq b-balance">
+          <div class="b-balance-inner">
+            <span class="tag">週3〜OK・平日休み相談可</span>
+            <h2>家庭も、自分も。<br>どちらも大切に<br>できる仕事を。</h2>
+            <div class="pts">
+              <div>週3日から稼働OK</div>
+              <div>10時始業・実働8hで定時</div>
+              <div>直行直帰・個人ノルマなし</div>
+            </div>
+          </div>
+          <div class="foot">未経験歓迎・首都圏</div>
+        </div>
+      </div>
+    </div>
+    <div class="banner-col">
+      <span class="size-tag">VERTICAL 1080×1920</span>
+      <div class="banner-wrap">
+        <div class="banner vert b-balance">
+          <div class="b-balance-inner">
+            <span class="tag">週3〜OK・平日休み</span>
+            <h2>家庭も、<br>自分も。<br>どちらも<br>大切に。</h2>
+            <div class="pts">
+              <div>週3日から稼働OK</div>
+              <div>10時始業・定時退社</div>
+              <div>直行直帰</div>
+              <div>個人ノルマなし</div>
+            </div>
+          </div>
+          <div class="foot">未経験歓迎・首都圏</div>
+        </div>
+      </div>
+    </div>
+    <div class="banner-col">
+      <span class="size-tag">HORIZONTAL 1600×900</span>
+      <div class="banner-wrap">
+        <div class="banner horiz b-balance">
+          <div class="b-balance-inner">
+            <span class="tag">週3〜OK・平日休み相談可</span>
+            <h2>家庭も、自分も。<br>どちらも大切にできる仕事を。</h2>
+            <div class="pts">
+              <div>週3日〜・10時始業・実働8hで定時退社</div>
+              <div>直行直帰・個人ノルマなし</div>
+            </div>
+          </div>
+          <div class="foot">未経験歓迎・首都圏</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== C:副業 ===== -->
+<div class="banner-section">
+  <div class="banner-heading">③ 副業バナー(業務委託・副業希望)</div>
+  <div class="banner-sub">モダン・エディトリアルデザイン。「縛られない働き方」を訴求。</div>
+  <div class="banner-row">
+    <div class="banner-col">
+      <span class="size-tag">SQUARE 1080×1080</span>
+      <div class="banner-wrap">
+        <div class="banner sq b-side">
+          <div class="b-side-inner">
+            <span class="label">SIDE / PARTNER</span>
+            <h2>ひとつの<br><span class="strike">肩書き</span>に、<br>縛られない。<span class="orange">/</span></h2>
+            <div class="chips"><span>業務委託</span><span>副業OK</span><span>週3〜</span><span>直行直帰</span></div>
+          </div>
+          <div class="foot">¥15,000〜/DAY・首都圏</div>
+        </div>
+      </div>
+    </div>
+    <div class="banner-col">
+      <span class="size-tag">VERTICAL 1080×1920</span>
+      <div class="banner-wrap">
+        <div class="banner vert b-side">
+          <div class="b-side-inner">
+            <span class="label">SIDE / PARTNER</span>
+            <h2>ひとつの<br><span class="strike">肩書き</span>に、<br>縛られ<br>ない。<span class="orange">/</span></h2>
+            <div class="chips"><span>業務委託</span><span>副業OK</span><span>週3〜</span></div>
+          </div>
+          <div class="foot">¥15,000〜/DAY・首都圏</div>
+        </div>
+      </div>
+    </div>
+    <div class="banner-col">
+      <span class="size-tag">HORIZONTAL 1600×900</span>
+      <div class="banner-wrap">
+        <div class="banner horiz b-side">
+          <div class="b-side-inner">
+            <span class="label">SIDE / PARTNER</span>
+            <h2>ひとつの<span class="strike">肩書き</span>に、<br>縛られない。<span class="orange">/</span></h2>
+            <div class="chips"><span>業務委託</span><span>副業OK</span><span>週3〜</span><span>直行直帰</span></div>
+          </div>
+          <div class="foot">¥15,000〜/DAY・首都圏</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== D:汎用 ===== -->
+<div class="banner-section">
+  <div class="banner-heading">④ 汎用バナー(全般・契約社員/正社員登用)</div>
+  <div class="banner-sub">信頼感のあるネイビーデザイン。幅広い層に訴求する汎用版。</div>
+  <div class="banner-row">
+    <div class="banner-col">
+      <span class="size-tag">SQUARE 1080×1080</span>
+      <div class="banner-wrap">
+        <div class="banner sq b-main">
+          <div class="b-main-inner">
+            <span class="tag">首都圏｜正社員登用あり</span>
+            <h2>売るのは、スマホ<br>じゃない。<br><span class="accent">自分のキャリア。</span></h2>
+            <div class="pay">未経験<span class="big">¥15,000</span>〜/日</div>
+          </div>
+          <div class="foot">個人ノルマなし｜直行直帰｜研修あり</div>
+        </div>
+      </div>
+    </div>
+    <div class="banner-col">
+      <span class="size-tag">VERTICAL 1080×1920</span>
+      <div class="banner-wrap">
+        <div class="banner vert b-main">
+          <div class="b-main-inner">
+            <span class="tag">首都圏｜正社員登用あり</span>
+            <h2>売るのは、<br>スマホじゃ<br>ない。<br><span class="accent">自分の<br>キャリア。</span></h2>
+            <div class="pay">未経験<span class="big">¥15,000</span>〜</div>
+          </div>
+          <div class="foot">ノルマなし｜直行直帰｜研修あり</div>
+        </div>
+      </div>
+    </div>
+    <div class="banner-col">
+      <span class="size-tag">HORIZONTAL 1600×900</span>
+      <div class="banner-wrap">
+        <div class="banner horiz b-main">
+          <div class="b-main-inner">
+            <span class="tag">首都圏｜正社員登用あり</span>
+            <h2>売るのは、スマホじゃない。<br><span class="accent">自分のキャリア。</span></h2>
+            <div class="pay">未経験<span class="big">¥15,000</span>〜/日</div>
+          </div>
+          <div class="foot">個人ノルマなし｜直行直帰｜研修あり</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

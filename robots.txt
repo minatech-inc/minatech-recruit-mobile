@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /_prototype/
+
+Sitemap: https://recruit-mobile.minatech1210.com/sitemap.xml
