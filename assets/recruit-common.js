@@ -83,6 +83,37 @@
     });
   }
 
+  // ---- Scroll reveal (IntersectionObserver based) -------------------------
+  function initScrollReveal() {
+    var els = document.querySelectorAll('[data-reveal], [data-reveal-stagger]');
+    if (!els.length) return;
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(function (el) { el.classList.add('is-visible'); });
+      return;
+    }
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    els.forEach(function (el) { observer.observe(el); });
+  }
+
+  // ---- Header shadow on scroll -------------------------------------------
+  function initHeaderShadow() {
+    var header = document.querySelector('.lp-header');
+    if (!header) return;
+    var update = function () {
+      if (window.scrollY > 12) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    };
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+  }
+
   // ---- GA4 ----------------------------------------------------------------
   function loadGA4() {
     if (isPlaceholder(cfg.ga4Id)) return;
@@ -115,6 +146,8 @@
   function init() {
     wireActionLinks();
     wireFaq();
+    initScrollReveal();
+    initHeaderShadow();
     loadGA4();
     loadPixel();
   }
