@@ -17,376 +17,185 @@
 <meta name="robots" content="index,follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/theme.css">
 <style>
-:root {
-  --ink: #0F172A;
-  --ink-soft: #475569;
-  --line: #E5E7EB;
-  --bg: #FAFAF7;
-  --white: #FFFFFF;
-  --accent: #DB4137;
-  --accent-soft: #FBE9E7;
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-body {
-  font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
-  color: var(--ink);
-  background: var(--bg);
-  line-height: 1.75;
-  -webkit-font-smoothing: antialiased;
-  font-feature-settings: "palt";
-}
-
-.container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
-
-/* ===== Header ===== */
-.header {
-  position: sticky; top: 0; z-index: 50;
-  background: rgba(250, 250, 247, 0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--line);
-}
-.header-inner {
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 18px 24px;
-  max-width: 1080px; margin: 0 auto;
-}
-.logo {
-  font-family: 'Inter', sans-serif;
-  font-weight: 800; font-size: 18px; letter-spacing: -0.02em;
-  color: var(--ink);
-}
-.logo .dot { color: var(--accent); }
-.header-nav {
-  font-size: 13px; color: var(--ink-soft); font-weight: 600;
-  letter-spacing: 0.05em;
-}
-
-/* ===== Hero ===== */
-.hero { padding: 88px 0 64px; }
-.hero-tag {
-  display: inline-block;
-  font-family: 'Inter', sans-serif;
-  font-size: 12px; font-weight: 700;
-  letter-spacing: 0.2em; color: var(--accent);
-  background: var(--accent-soft);
-  padding: 6px 14px; border-radius: 100px;
-  margin-bottom: 28px;
-}
-.hero h1 {
-  font-size: clamp(32px, 5vw, 56px);
-  font-weight: 900;
-  line-height: 1.3;
-  letter-spacing: -0.02em;
-  margin-bottom: 24px;
-}
-.hero h1 .accent { color: var(--accent); }
-.hero p {
-  font-size: 17px; color: var(--ink-soft);
-  max-width: 680px; line-height: 1.95;
-}
-
-/* ===== Quick Conditions ===== */
-.conditions {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  padding: 32px 0;
-  margin: 40px 0 0;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-.cond-item .cond-label {
-  font-family: 'Inter', sans-serif;
-  font-size: 11px; font-weight: 700;
-  letter-spacing: 0.15em; color: var(--ink-soft);
-  margin-bottom: 6px;
-}
-.cond-item .cond-val {
-  font-size: 17px; font-weight: 700; color: var(--ink);
-  line-height: 1.4;
-}
-
-/* ===== Cards ===== */
-.cards-section { padding: 80px 0 100px; }
-.section-label {
-  font-family: 'Inter', sans-serif;
-  font-size: 12px; font-weight: 700;
-  letter-spacing: 0.25em; color: var(--accent);
-  margin-bottom: 16px;
-}
-.section-title {
-  font-size: clamp(24px, 3vw, 36px);
-  font-weight: 800; line-height: 1.4;
-  margin-bottom: 48px;
-}
-.cards {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-.card {
+/* Hub固有: LPカードナビゲーション */
+.hub-card {
   display: block;
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 36px 32px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-line);
+  border-radius: 12px;
+  padding: 32px 28px;
   text-decoration: none;
   color: inherit;
-  transition: all 0.25s ease;
-  position: relative;
-  overflow: hidden;
+  transition: border-color 0.2s, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
 }
-.card:hover {
-  border-color: var(--ink);
+.hub-card:hover {
+  border-color: var(--color-ink);
   transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.08);
 }
-.card.urgent {
+.hub-card.urgent {
   grid-column: 1 / -1;
-  background: var(--ink);
-  color: var(--white);
-  border-color: var(--ink);
+  background: var(--color-ink);
+  color: white;
+  border-color: var(--color-ink);
 }
-.card.urgent:hover { background: #1f2937; }
-.card-tag {
+.hub-card.urgent:hover {
+  background: #1e293b;
+  border-color: #1e293b;
+}
+.hub-card-tag {
   display: inline-block;
-  font-family: 'Inter', sans-serif;
   font-size: 11px; font-weight: 700;
   letter-spacing: 0.15em;
   padding: 4px 12px;
   border-radius: 100px;
   margin-bottom: 18px;
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
 }
-.card .card-tag {
-  background: var(--accent-soft); color: var(--accent);
+.hub-card.urgent .hub-card-tag {
+  background: rgba(255,255,255,0.15); color: white;
 }
-.card.urgent .card-tag {
-  background: var(--accent); color: var(--white);
+.hub-card h3 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 20px; font-weight: 800;
+  line-height: 1.55;
+  margin-bottom: 12px;
 }
-.card h3 {
-  font-size: 22px;
-  font-weight: 800;
-  line-height: 1.45;
-  margin-bottom: 14px;
-  letter-spacing: -0.01em;
-}
-.card p {
+.hub-card p {
   font-size: 14.5px;
-  color: var(--ink-soft);
-  line-height: 1.85;
-  margin-bottom: 24px;
-}
-.card.urgent p { color: rgba(255, 255, 255, 0.75); }
-.card-cta {
-  font-family: 'Inter', sans-serif;
-  font-size: 13px; font-weight: 700;
-  color: var(--accent);
-  letter-spacing: 0.05em;
-}
-.card.urgent .card-cta { color: var(--white); }
-
-/* ===== Note ===== */
-.note {
-  padding: 40px 0 0;
-  font-size: 13px;
-  color: var(--ink-soft);
-  line-height: 1.95;
-}
-.note strong { color: var(--ink); }
-
-/* ===== Consult CTA ===== */
-.hub-consult {
-  background: var(--ink);
-  color: var(--white);
-  padding: clamp(60px, 10vw, 100px) clamp(20px, 4vw, 24px);
-  text-align: center;
-}
-.hub-consult .consult-inner {
-  max-width: 720px;
-  margin: 0 auto;
-}
-.consult-label {
-  font-family: 'Inter', sans-serif;
-  font-size: 12px; font-weight: 700;
-  letter-spacing: 0.25em;
-  color: var(--accent);
-  margin-bottom: 18px;
-}
-.hub-consult h2 {
-  font-size: clamp(22px, 3vw, 32px);
-  font-weight: 800;
-  line-height: 1.5;
-  margin-bottom: 20px;
-  letter-spacing: -0.01em;
-}
-.hub-consult p {
-  font-size: 15px;
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--color-ink-soft);
   line-height: 1.9;
-  margin-bottom: 32px;
+  margin-bottom: 22px;
 }
-.btn-line {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 18px 36px;
-  background: #06C755;
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 15px;
-  border-radius: 100px;
-  transition: all 0.2s ease;
-  letter-spacing: 0.03em;
-}
-.btn-line:hover {
-  background: #05B04D;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(6, 199, 85, 0.35);
-}
-.consult-note {
-  margin-top: 24px;
-  font-size: 12px !important;
-  color: rgba(255, 255, 255, 0.55) !important;
-  margin-bottom: 0 !important;
-}
-
-/* ===== Footer ===== */
-footer {
-  background: var(--white);
-  border-top: 1px solid var(--line);
-  padding: 40px 24px;
-  text-align: center;
-  font-size: 12px;
-  color: var(--ink-soft);
+.hub-card.urgent p { color: rgba(255,255,255,0.75); }
+.hub-card-cta {
+  font-size: 13px; font-weight: 700;
+  color: var(--color-accent);
   letter-spacing: 0.05em;
 }
-footer .legal { margin-top: 8px; opacity: 0.7; }
-
-/* ===== Responsive ===== */
+.hub-card.urgent .hub-card-cta { color: white; }
+.hub-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.hub-note {
+  padding: 40px 0 0;
+  font-size: 13.5px;
+  color: var(--color-ink-soft);
+  line-height: 2;
+}
+.hub-note strong { color: var(--color-ink); }
 @media (max-width: 760px) {
-  .hero { padding: 56px 0 40px; }
-  .conditions { grid-template-columns: repeat(2, 1fr); gap: 20px; padding: 24px 0; }
-  .cards-section { padding: 56px 0 80px; }
-  .cards { grid-template-columns: 1fr; }
-  .card { padding: 28px 24px; }
-  .card.urgent { grid-column: auto; }
+  .hub-cards { grid-template-columns: 1fr; }
+  .hub-card.urgent { grid-column: auto; }
 }
 </style>
 </head>
 <body data-lp="hub">
 
-<header class="header">
-  <div class="header-inner">
-    <div class="logo">MinaTech<span class="dot">.</span>MobileRecruit</div>
-    <div class="header-nav">RECRUIT 2026</div>
+<header class="lp-header">
+  <div class="lp-header-inner">
+    <div class="lp-logo">MinaTech<span class="sub">MOBILE RECRUIT</span></div>
+    <div style="font-size:12px;color:var(--color-ink-soft);letter-spacing:0.05em;">RECRUIT 2026</div>
   </div>
 </header>
 
-<section class="hero">
-  <div class="container">
-    <div class="hero-tag">CHOOSE YOUR WAY</div>
-    <h1>
+<section class="lp-hero">
+  <div class="lp-hero-inner">
+    <span class="lp-hero-tag" data-reveal>CHOOSE YOUR WAY / 5つの働き方</span>
+    <h1 class="lp-hero-title" data-reveal>
       あなたに合う<span class="accent">働き方</span>を、<br>
       ひとつずつ見比べて選べます。
     </h1>
-    <p>
-      docomo・au・SoftBank・楽天モバイルの携帯販売スタッフを、首都圏で募集しています。<br>
-      契約社員・業務委託・両立・副業・急募の5つの働き方ごとに、別ページでくわしくご案内しています。
+    <p class="lp-hero-sub" data-reveal>
+      docomo・au・SoftBank・楽天モバイルの携帯販売スタッフを、首都圏で募集しています。契約社員・業務委託・両立・副業・急募の5つの働き方ごとに、別ページでくわしくご案内しています。
     </p>
-    <div class="conditions">
-      <div class="cond-item">
-        <div class="cond-label">DAILY WAGE</div>
-        <div class="cond-val">15,000円〜</div>
-      </div>
-      <div class="cond-item">
-        <div class="cond-label">EXPERIENCE</div>
-        <div class="cond-val">未経験OK</div>
-      </div>
-      <div class="cond-item">
-        <div class="cond-label">COMMUTE</div>
-        <div class="cond-val">直行直帰</div>
-      </div>
-      <div class="cond-item">
-        <div class="cond-label">QUOTA</div>
-        <div class="cond-val">個人ノルマなし</div>
-      </div>
+    <div class="lp-hero-stats" data-reveal-stagger>
+      <div><div class="lp-stat-label">DAILY WAGE</div><div class="lp-stat-val">15,000円〜</div></div>
+      <div><div class="lp-stat-label">EXPERIENCE</div><div class="lp-stat-val">未経験OK</div></div>
+      <div><div class="lp-stat-label">COMMUTE</div><div class="lp-stat-val">直行直帰</div></div>
+      <div><div class="lp-stat-label">QUOTA</div><div class="lp-stat-val">個人ノルマなし</div></div>
     </div>
   </div>
 </section>
 
-<section class="cards-section">
-  <div class="container">
-    <div class="section-label">— 5 WAYS TO START</div>
-    <h2 class="section-title">気になる働き方を、お選びください。</h2>
-    <div class="cards">
+<section class="lp-section alt">
+  <div class="lp-section-inner">
+    <div class="section-label" data-reveal>— 5 WAYS TO START</div>
+    <h2 class="section-title" data-reveal>気になる働き方を、お選びください。</h2>
+    <div class="hub-cards" data-reveal-stagger>
 
-      <a href="/employee/" class="card">
-        <div class="card-tag">CONTRACT</div>
-        <h3>契約社員として、<br>安定して始めたい</h3>
+      <a href="/employee/" class="hub-card">
+        <div class="hub-card-tag">CONTRACT</div>
+        <h3>契約社員として、<br>安心して始めたい</h3>
         <p>社会保険完備・有給休暇あり。日給15,000円〜、未経験OK、正社員登用制度あり。働き方を変えたくなったら、年1回 雇用形態の切替申請ができます。</p>
-        <span class="card-cta">契約社員LPを見る →</span>
+        <span class="hub-card-cta">契約社員LPを見る →</span>
       </a>
 
-      <a href="/partner/" class="card">
-        <div class="card-tag">FREELANCE</div>
-        <h3>業務委託で、<br>もっと自由に稼ぎたい</h3>
+      <a href="/partner/" class="hub-card">
+        <div class="hub-card-tag">FREELANCE</div>
+        <h3>業務委託で、<br>自由に稼ぎたい</h3>
         <p>日額15,000円（税込）スタート、副業OK、稼働日を自分で決める。実働8時間・延長なし。第三の働き方として、自由と安定を両立できます。</p>
-        <span class="card-cta">業務委託LPを見る →</span>
+        <span class="hub-card-cta">業務委託LPを見る →</span>
       </a>
 
-      <a href="/balance/" class="card">
-        <div class="card-tag">BALANCE</div>
+      <a href="/balance/" class="hub-card">
+        <div class="hub-card-tag">BALANCE</div>
         <h3>家庭と両立できる<br>働き方を探している</h3>
         <p>週3日〜の稼働、10時始業、平日休み相談OK。保育園のお迎えに間に合う設計。子育て・介護と両立しやすい仕組みを整えました。</p>
-        <span class="card-cta">両立LPを見る →</span>
+        <span class="hub-card-cta">両立LPを見る →</span>
       </a>
 
-      <a href="/side/" class="card">
-        <div class="card-tag">SIDE</div>
+      <a href="/side/" class="hub-card">
+        <div class="hub-card-tag">SIDE</div>
         <h3>本業と並行できる<br>副業・複業を始めたい</h3>
         <p>業務委託で副業・複業 完全自由。週3日から、直行直帰。本業の繁閑に左右されない安定した案件を、もう一本の収入の柱に。</p>
-        <span class="card-cta">副業LPを見る →</span>
+        <span class="hub-card-cta">副業LPを見る →</span>
       </a>
 
-      <a href="/urgent/" class="card urgent">
-        <div class="card-tag">URGENT</div>
+      <a href="/urgent/" class="hub-card urgent">
+        <div class="hub-card-tag">URGENT</div>
         <h3>北海道・静岡エリア 急募中。出張対応できる方は優遇</h3>
-        <p>人手が足りていないエリアで緊急募集。未経験でも日給15,000円〜、経験者20,000円〜。旅費交通費・県外出張手当を別途お支払いします。</p>
-        <span class="card-cta">急募LPを見る →</span>
+        <p>人手が足りていないエリアで緊急募集。日給15,000円〜、経験者20,000円〜。旅費交通費・県外出張手当を別途お支払いします。</p>
+        <span class="hub-card-cta">急募LPを見る →</span>
       </a>
 
     </div>
 
-    <div class="note">
-      <strong>給与（契約社員／正社員）：</strong>未経験 日給/日額 15,000〜18,000円 ／ 経験者 20,000円〜<br><strong>給与（業務委託）：</strong>日額 15,000円（税込）〜 スタート（経験・実績に応じて改定）<br>
+    <div class="hub-note" data-reveal>
+      <strong>給与（契約社員／正社員）：</strong>未経験 日給/日額 15,000〜18,000円 ／ 経験者 20,000円〜<br>
+      <strong>給与（業務委託）：</strong>日額 15,000円（税込）〜 スタート（経験・実績に応じて改定）<br>
       <strong>勤務時間：</strong>10:00〜19:00 または 11:00〜20:00（実働8時間ぴったり・定時退社）<br>
       <strong>勤務地：</strong>首都圏（東京・神奈川・千葉・埼玉）／ 北海道全域・静岡全域 急募中
     </div>
   </div>
 </section>
 
-<section class="hub-consult">
-  <div class="consult-inner">
-    <div class="consult-label">— STILL DECIDING?</div>
-    <h2>雇用形態が決めきれない、<br>まずは話を聞いてみたい方へ。</h2>
-    <p>どの働き方が自分に合うかわからない場合、まずはLINEで気軽にご相談ください。<br>担当者がライフスタイル・希望をうかがって、最適な働き方をご提案します。</p>
-    <a href="#" class="btn-line" data-action="line">LINEで相談する →</a>
-    <p class="consult-note">※ 1〜2営業日以内にご返信します</p>
+<section class="apply-section">
+  <div class="apply-inner">
+    <div class="section-label" data-reveal>— STILL DECIDING?</div>
+    <h2 data-reveal>雇用形態が決めきれない、<br>まずは話を聞いてみたい方へ。</h2>
+    <p data-reveal>どの働き方が自分に合うかわからない場合、まずはLINEで気軽にご相談ください。担当者がライフスタイル・希望をうかがって、最適な働き方をご提案します。</p>
+    <div class="apply-btns" data-reveal>
+      <a href="#" class="btn btn-line" data-action="line">LINEで相談する →</a>
+    </div>
+    <div class="apply-note">1〜2営業日以内にご返信します</div>
   </div>
 </section>
 
-<footer>
-  <div style="margin-bottom: 14px; font-size: 12.5px; line-height: 1.85; color: var(--ink-soft);">
-    <strong style="color: var(--ink); font-weight: 700;">MinaTech株式会社</strong> ｜ 〒251-0055 神奈川県藤沢市南藤沢3-12 クリオ藤沢駅前 7階<br>
-    TEL <a href="tel:0466960313" style="color: var(--ink-soft);">0466-96-0313</a> ｜ 採用窓口 <a href="mailto:recruit@minatech1210.com" style="color: var(--ink-soft);">recruit@minatech1210.com</a> ｜ 法人番号 9010701041936
+<footer class="lp-footer">
+  <div class="container">
+    <div class="lp-footer-company">
+      <strong>MinaTech株式会社</strong> ｜ 〒251-0055 神奈川県藤沢市南藤沢3-12 クリオ藤沢駅前 7階<br>
+      TEL <a href="tel:0466960313">0466-96-0313</a> ｜ 採用窓口 <a href="mailto:recruit@minatech1210.com">recruit@minatech1210.com</a> ｜ 法人番号 9010701041936
+    </div>
+    <div class="lp-footer-copy">© 2026 MinaTech株式会社</div>
   </div>
-  <div>© 2026 MinaTech MobileRecruit</div>
 </footer>
 
 <script defer src="/assets/config.js"></script>
