@@ -15,772 +15,177 @@
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="index,follow">
-<!-- JobPosting JSON-LD（Phase 2 で有効化済） -->
 <script type="application/ld+json">
-{"@context":"https://schema.org/","@type":"JobPosting","title":"携帯販売スタッフ（北海道・静岡 急募）","description":"北海道全域・静岡全域で携帯販売スタッフを緊急募集。日給15,000円〜18,000円（未経験）／20,000円〜（経験者）。出張手当・旅費交通費支給。","employmentType":"CONTRACTOR","datePosted":"2026-05-23","validThrough":"2026-11-30T23:59:59+09:00","hiringOrganization":{"@type":"Organization","name":"MinaTech株式会社","identifier":{"@type":"PropertyValue","name":"法人番号","value":"9010701041936"},"telephone":"+81-466-96-0313","address":{"@type":"PostalAddress","postalCode":"251-0055","addressCountry":"JP","addressRegion":"神奈川県","addressLocality":"藤沢市","streetAddress":"南藤沢3-12 クリオ藤沢駅前 7階"}},"jobLocation":[{"@type":"Place","address":{"@type":"PostalAddress","addressCountry":"JP","addressRegion":"北海道"}},{"@type":"Place","address":{"@type":"PostalAddress","addressCountry":"JP","addressRegion":"静岡県"}}],"baseSalary":{"@type":"MonetaryAmount","currency":"JPY","value":{"@type":"QuantitativeValue","minValue":15000,"maxValue":20000,"unitText":"DAY"}}}
+{"@context":"https://schema.org/","@type":"JobPosting","title":"携帯販売スタッフ（北海道・静岡 急募）","description":"北海道全域・静岡全域で携帯販売スタッフを緊急募集。日給15,000〜18,000円（未経験）／20,000円〜（経験者）。出張手当・旅費交通費支給。","employmentType":"CONTRACTOR","datePosted":"2026-05-23","validThrough":"2026-11-30T23:59:59+09:00","hiringOrganization":{"@type":"Organization","name":"MinaTech株式会社","identifier":{"@type":"PropertyValue","name":"法人番号","value":"9010701041936"},"telephone":"+81-466-96-0313","address":{"@type":"PostalAddress","postalCode":"251-0055","addressCountry":"JP","addressRegion":"神奈川県","addressLocality":"藤沢市","streetAddress":"南藤沢3-12 クリオ藤沢駅前 7階"}},"jobLocation":[{"@type":"Place","address":{"@type":"PostalAddress","addressCountry":"JP","addressRegion":"北海道"}},{"@type":"Place","address":{"@type":"PostalAddress","addressCountry":"JP","addressRegion":"静岡県"}}],"baseSalary":{"@type":"MonetaryAmount","currency":"JPY","value":{"@type":"QuantitativeValue","minValue":15000,"maxValue":20000,"unitText":"DAY"}}}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+JP:wght@400;500;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/theme.css">
 <style>
-:root {
-  --red: #E8281E;
-  --red-deep: #B81810;
-  --black: #111111;
-  --white: #FFFFFF;
-  --bg: #F7F5F0;
-  --ink: #1A1A1A;
-  --ink-soft: #595959;
-  --yellow: #FFD400;
-  --line: #E2DFD6;
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
-
-body {
-  font-family: 'Noto Sans JP', sans-serif;
-  color: var(--ink);
-  background: var(--bg);
-  line-height: 1.7;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  width: 100%;
-  position: relative;
-  font-feature-settings: "palt";
-}
-
-section { overflow-x: clip; }
-
-/* ===== URGENT BAR ===== */
-.urgent-bar {
-  background: var(--red);
-  color: var(--white);
-  text-align: center;
-  padding: 10px 16px;
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.05em;
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 110;
-  overflow: hidden;
-  white-space: nowrap;
-}
-.urgent-track {
+/* urgent LP local override: 急募バッジのみ warm red アクセント */
+.urgent-badge {
   display: inline-block;
-  animation: marquee 18s linear infinite;
-}
-.urgent-track span { margin: 0 32px; }
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-/* ===== HEADER ===== */
-.header {
-  position: fixed;
-  top: 38px; left: 0; right: 0;
-  z-index: 100;
-  background: rgba(247, 245, 240, 0.95);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 2px solid var(--black);
-}
-.header-inner {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 14px 28px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.logo {
-  font-family: 'Anton', sans-serif;
-  font-size: 22px;
-  color: var(--black);
-  letter-spacing: 0.02em;
-}
-.logo .red { color: var(--red); }
-.cta-header {
-  padding: 12px 26px;
-  background: var(--red);
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.05em;
-  transition: all 0.2s;
-}
-.cta-header:hover { background: var(--red-deep); }
-
-/* ===== HERO ===== */
-.hero {
-  padding: 150px 28px 80px;
-  position: relative;
-  overflow: hidden;
-  background: var(--black);
-  color: var(--white);
-  width: 100%;
-  max-width: 100vw;
-}
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: repeating-linear-gradient(
-    -45deg,
-    transparent,
-    transparent 30px,
-    rgba(232, 40, 30, 0.06) 30px,
-    rgba(232, 40, 30, 0.06) 60px
-  );
-  pointer-events: none;
-}
-.hero-inner {
-  max-width: 1280px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
-}
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: var(--red);
-  color: var(--white);
-  font-family: 'Anton', sans-serif;
-  font-size: 16px;
-  letter-spacing: 0.1em;
-  padding: 10px 24px;
-  margin-bottom: 28px;
-  animation: blink 1.5s ease-in-out infinite;
-}
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.65; }
-}
-.hero h1 {
-  font-family: 'Anton', sans-serif;
-  font-size: clamp(48px, 10vw, 150px);
-  line-height: 0.95;
-  letter-spacing: 0.01em;
-  margin-bottom: 32px;
-  font-weight: 400;
-}
-.hero h1 .red {
-  color: var(--red);
-  -webkit-text-stroke: 0;
-}
-.hero h1 .yellow { color: var(--yellow); }
-.hero h1 .outline {
-  -webkit-text-stroke: 2px var(--white);
-  color: transparent;
-}
-.hero-area {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
-}
-.area-chip {
-  font-family: 'Anton', sans-serif;
-  font-size: clamp(20px, 3vw, 32px);
-  letter-spacing: 0.05em;
-  padding: 8px 28px;
-  border: 2px solid var(--white);
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-}
-.area-chip .pin { color: var(--red); }
-.hero-desc {
-  font-size: clamp(15px, 1.4vw, 18px);
-  line-height: 2;
-  color: rgba(255, 255, 255, 0.8);
-  max-width: 600px;
-  margin-bottom: 48px;
-}
-.hero-desc strong { color: var(--yellow); }
-.hero-cta-row {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-.btn-primary {
-  padding: 24px 48px;
-  background: var(--red);
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 17px;
-  transition: all 0.2s;
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  border: 2px solid var(--red);
-}
-.btn-primary:hover { background: transparent; }
-.btn-secondary {
-  padding: 24px 48px;
-  background: transparent;
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 17px;
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  transition: all 0.2s;
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-}
-.btn-secondary:hover { border-color: var(--white); background: rgba(255,255,255,0.06); }
-
-/* ===== PAY BANNER ===== */
-.pay-banner {
-  background: var(--yellow);
-  padding: 0;
-  overflow: hidden;
-  border-top: 4px solid var(--black);
-  border-bottom: 4px solid var(--black);
-}
-.pay-marquee {
-  display: flex;
-  white-space: nowrap;
-  animation: payslide 20s linear infinite;
-}
-.pay-marquee span {
-  font-family: 'Anton', sans-serif;
-  font-size: clamp(32px, 5vw, 64px);
-  letter-spacing: 0.02em;
-  color: var(--black);
-  padding: 16px 0;
-  margin: 0 40px;
-  display: inline-flex;
-  align-items: center;
-  gap: 16px;
-}
-.pay-marquee span::after {
-  content: '★';
-  color: var(--red);
-}
-@keyframes payslide {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-/* ===== SECTION COMMON ===== */
-section { padding: 100px 28px; position: relative; }
-.section-inner { max-width: 1280px; margin: 0 auto; }
-.section-label {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 18px;
-  letter-spacing: 0.2em;
-  color: var(--red);
-  margin-bottom: 12px;
-  display: block;
-}
-.section-title {
-  font-family: 'Anton', sans-serif;
-  font-size: clamp(32px, 5.5vw, 72px);
-  line-height: 1.1;
-  color: var(--ink);
-  margin-bottom: 24px;
-  font-weight: 400;
-  letter-spacing: 0.01em;
-}
-.section-title .red { color: var(--red); }
-.section-sub {
-  font-size: 16px;
-  color: var(--ink-soft);
-  margin-bottom: 56px;
-  max-width: 700px;
-  line-height: 2;
-}
-
-/* ===== WHY URGENT ===== */
-.why { background: var(--white); }
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  margin-top: 48px;
-}
-.why-card {
-  background: var(--bg);
-  border: 2px solid var(--black);
-  padding: 40px 36px;
-  position: relative;
-  transition: all 0.2s;
-}
-.why-card:hover { background: var(--black); color: var(--white); transform: translate(-4px, -4px); box-shadow: 8px 8px 0 var(--red); }
-.why-card:hover .why-num { color: var(--yellow); }
-.why-card:hover .why-card-desc { color: rgba(255,255,255,0.8); }
-.why-num {
-  font-family: 'Anton', sans-serif;
-  font-size: 40px;
-  color: var(--red);
-  line-height: 1;
-  margin-bottom: 16px;
-}
-.why-card h3 {
-  font-size: 24px;
-  font-weight: 900;
-  margin-bottom: 14px;
-  line-height: 1.4;
-}
-.why-card-desc {
-  font-size: 14px;
-  color: var(--ink-soft);
-  line-height: 1.9;
-}
-
-/* ===== PAY DETAIL ===== */
-.paydetail { background: var(--black); color: var(--white); }
-.paydetail .section-title { color: var(--white); }
-.paydetail .section-sub { color: rgba(255,255,255,0.6); }
-.pay-cards {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  margin-top: 48px;
-}
-.pay-card {
-  border: 2px solid rgba(255,255,255,0.2);
-  padding: 48px 40px;
-  text-align: center;
-  transition: all 0.2s;
-}
-.pay-card:hover { border-color: var(--yellow); }
-.pay-card.exp { background: var(--red); border-color: var(--red); }
-.pay-card-label {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 20px;
+  padding: 6px 14px;
+  background: #B45309;
+  color: white;
+  font-size: 12px; font-weight: 700;
   letter-spacing: 0.15em;
-  color: var(--yellow);
-  margin-bottom: 16px;
-}
-.pay-card.exp .pay-card-label { color: var(--white); }
-.pay-card-amount {
-  font-family: 'Anton', sans-serif;
-  font-size: clamp(48px, 7vw, 88px);
-  line-height: 1;
-  margin-bottom: 8px;
-}
-.pay-card-amount .small { font-size: 0.35em; }
-.pay-card-note {
-  font-size: 13px;
-  color: rgba(255,255,255,0.6);
-}
-.pay-card.exp .pay-card-note { color: rgba(255,255,255,0.85); }
-.pay-extra {
-  margin-top: 20px;
-  background: rgba(255,212,0,0.1);
-  border: 1px solid var(--yellow);
-  padding: 28px 32px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-.pay-extra-icon {
-  font-family: 'Anton', sans-serif;
-  font-size: 32px;
-  color: var(--yellow);
-}
-.pay-extra-text {
-  font-size: 15px;
-  line-height: 1.8;
-  flex: 1;
-  min-width: 240px;
-}
-.pay-extra-text strong { color: var(--yellow); }
-
-/* ===== CONDITIONS ===== */
-.cond { background: var(--bg); }
-.cond-table {
-  margin-top: 48px;
-  border: 2px solid var(--black);
-  background: var(--white);
-}
-.cond-row {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  border-bottom: 1px solid var(--line);
-}
-.cond-row:last-child { border-bottom: none; }
-.cond-key {
-  padding: 24px 28px;
-  background: var(--black);
-  color: var(--white);
-  font-weight: 700;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-}
-.cond-val {
-  padding: 24px 28px;
-  font-size: 14px;
-  color: var(--ink);
-  line-height: 1.9;
-}
-.cond-val .hl { color: var(--red); font-weight: 700; }
-
-/* ===== STEP ===== */
-.step { background: var(--white); }
-.step-list { margin-top: 48px; display: flex; flex-direction: column; gap: 16px; }
-.step-item {
-  display: grid;
-  grid-template-columns: 90px 1fr;
-  gap: 24px;
-  align-items: center;
-  padding: 28px 32px;
-  background: var(--bg);
-  border-left: 6px solid var(--red);
-}
-.step-num {
-  font-family: 'Anton', sans-serif;
-  font-size: 44px;
-  color: var(--red);
-  line-height: 1;
-}
-.step-content h4 { font-size: 18px; font-weight: 900; margin-bottom: 6px; }
-.step-content p { font-size: 14px; color: var(--ink-soft); line-height: 1.8; }
-
-/* ===== APPLY ===== */
-.apply {
-  background: var(--red);
-  color: var(--white);
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.apply::before {
-  content: 'NOW HIRING';
-  position: absolute;
-  bottom: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: 'Anton', sans-serif;
-  font-size: clamp(80px, 16vw, 220px);
-  color: rgba(255,255,255,0.1);
-  white-space: nowrap;
-  line-height: 0.8;
-}
-.apply-inner { position: relative; z-index: 2; }
-.apply h2 {
-  font-family: 'Anton', sans-serif;
-  font-size: clamp(40px, 7vw, 96px);
-  line-height: 1.05;
+  border-radius: 100px;
   margin-bottom: 28px;
-  font-weight: 400;
-  letter-spacing: 0.01em;
 }
-.apply h2 .yellow { color: var(--yellow); }
-.apply p {
-  font-size: 16px;
-  margin-bottom: 48px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 2;
-  color: rgba(255,255,255,0.9);
-}
-.apply-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px; }
-.btn-apply-main {
-  padding: 24px 52px;
-  background: var(--white);
-  color: var(--red);
-  text-decoration: none;
+.area-emphasis {
+  color: #B45309;
   font-weight: 900;
-  font-size: 17px;
-  transition: all 0.2s;
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  border: 2px solid var(--white);
-}
-.btn-apply-main:hover { background: var(--black); color: var(--white); border-color: var(--black); }
-.btn-apply-sub {
-  padding: 24px 52px;
-  background: transparent;
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 17px;
-  border: 2px solid rgba(255,255,255,0.5);
-  transition: all 0.2s;
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-}
-.btn-apply-sub:hover { border-color: var(--white); background: rgba(255,255,255,0.1); }
-.apply-note {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 15px;
-  letter-spacing: 0.15em;
-  color: rgba(255,255,255,0.8);
-}
-
-footer {
-  background: var(--black);
-  color: rgba(255,255,255,0.4);
-  padding: 32px;
-  text-align: center;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 14px;
-  letter-spacing: 0.1em;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 900px) {
-  .header { top: 36px; }
-  .header-inner { padding: 12px 18px; }
-  .hero { padding: 150px 18px 60px; }
-  section { padding: 64px 18px; }
-  .why-grid { grid-template-columns: 1fr; }
-  .pay-cards { grid-template-columns: 1fr; }
-  .cond-row { grid-template-columns: 1fr; }
-  .cond-key { padding: 14px 20px; }
-  .cond-val { padding: 16px 20px; }
-  .step-item { grid-template-columns: 60px 1fr; gap: 16px; padding: 22px 20px; }
-  .step-num { font-size: 34px; }
-  .apply-btns { flex-direction: column; align-items: stretch; padding: 0 16px; }
-  .btn-apply-main, .btn-apply-sub, .btn-primary, .btn-secondary { justify-content: center; padding: 20px 32px; font-size: 15px; }
-  .hero-cta-row { flex-direction: column; }
-  .area-chip { font-size: 22px; padding: 8px 20px; }
-  .urgent-bar { font-size: 11px; }
 }
 </style>
 </head>
 <body data-lp="urgent">
 
-<!-- URGENT BAR -->
-<div class="urgent-bar">
-  <div class="urgent-track">
-    <span>🔥 北海道全域・静岡全域 緊急募集中</span>
-    <span>★ 出張手当・旅費交通費 全額支給</span>
-    <span>★ 未経験 日給15,000円〜</span>
-    <span>🔥 北海道全域・静岡全域 緊急募集中</span>
-    <span>★ 出張手当・旅費交通費 全額支給</span>
-    <span>★ 未経験 日給15,000円〜</span>
-  </div>
-</div>
-
-<!-- HEADER -->
-<header class="header">
-  <div class="header-inner">
-    <div class="logo">URGENT<span class="red">.</span>RECRUIT</div>
-    <a href="#apply" class="cta-header">今すぐ応募 →</a>
+<header class="lp-header">
+  <div class="lp-header-inner">
+    <div class="lp-logo">MinaTech<span class="sub">URGENT</span></div>
+    <a href="#apply" class="lp-header-cta">応募する →</a>
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-badge">● 急募 / URGENT HIRING</div>
-    <h1>
-      <span class="outline">今、</span><span class="red">人手が</span><br>
-      足りていない。<br>
-      <span class="yellow">だから、稼げる。</span>
+<section class="lp-hero">
+  <div class="lp-hero-inner">
+    <span class="urgent-badge" data-reveal>● 急募 / URGENT HIRING</span>
+    <h1 class="lp-hero-title" data-reveal>
+      <span class="area-emphasis">北海道・静岡</span>で、<br>
+      携帯販売スタッフを募集中。
     </h1>
-    <div class="hero-area">
-      <span class="area-chip"><span class="pin">●</span>北海道 全域</span>
-      <span class="area-chip"><span class="pin">●</span>静岡 全域</span>
-    </div>
-    <p class="hero-desc">
-      大手キャリア(docomo・au・SoftBank・楽天モバイル)の<br>
-      携帯販売スタッフを、北海道・静岡エリアで緊急募集しています。<br>
-      <strong>未経験でも日給15,000円〜、経験者は20,000円〜。</strong><br>
-      出張対応できる方には、旅費交通費+県外出張手当もお支払いします。
+    <p class="lp-hero-sub" data-reveal>
+      大手キャリア（docomo・au・SoftBank・楽天モバイル）の携帯販売スタッフを、<strong>北海道全域（札幌市中心）・静岡全域（静岡市・浜松市中心）</strong>で緊急募集しています。未経験でも日給15,000円〜、経験者は20,000円〜。出張対応可能な方には、旅費交通費 + 県外出張手当もお支払いします。
     </p>
-    <div class="hero-cta-row">
-      <a href="#apply" class="btn-primary">今すぐ応募する →</a>
-      <a href="#pay" class="btn-secondary">給与の詳細を見る</a>
+    <div class="lp-hero-stats" data-reveal-stagger>
+      <div><div class="lp-stat-label">DAILY WAGE</div><div class="lp-stat-val">15,000円〜</div></div>
+      <div><div class="lp-stat-label">TRAVEL ALLOWANCE</div><div class="lp-stat-val">全額支給</div></div>
+      <div><div class="lp-stat-label">TIME TO OFFER</div><div class="lp-stat-val">最短7日</div></div>
+      <div><div class="lp-stat-label">DEBUT</div><div class="lp-stat-val">最短10日</div></div>
+    </div>
+    <div class="lp-cta-group" data-reveal>
+      <a href="#" class="btn btn-primary" data-action="apply">今すぐWEBで応募 →</a>
+      <a href="#apply" class="btn btn-outline">給与詳細を見る</a>
     </div>
   </div>
 </section>
 
-<!-- PAY BANNER -->
-<div class="pay-banner">
-  <div class="pay-marquee">
-    <span>未経験 ¥15,000〜18,000/日</span>
-    <span>経験者 ¥20,000/日</span>
-    <span>出張手当あり</span>
-    <span>未経験 ¥15,000〜18,000/日</span>
-    <span>経験者 ¥20,000/日</span>
-    <span>出張手当あり</span>
-  </div>
-</div>
-
-<!-- WHY URGENT -->
-<section class="why">
-  <div class="section-inner">
-    <span class="section-label">WHY NOW</span>
-    <h2 class="section-title">急募だから、<br><span class="red">条件がいい。</span></h2>
-    <p class="section-sub">人手が足りていない今だからこそ、好条件で迎え入れます。北海道・静岡エリアで、すぐに働きたい方を募集中です。</p>
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="why-num">01</div>
+<section class="lp-section alt">
+  <div class="lp-section-inner">
+    <div class="section-label" data-reveal>— WHY NOW</div>
+    <h2 class="section-title" data-reveal>急募だからこその、<br>好条件でお迎えします。</h2>
+    <p class="section-sub" data-reveal>人手が足りていない今だからこそ、条件を最大限に整えて、すぐ働きたい方を歓迎します。</p>
+    <div class="reason-grid" data-reveal-stagger>
+      <div class="reason-card">
+        <div class="reason-num">01 / HIGH WAGE</div>
         <h3>高水準の日給スタート</h3>
-        <p class="why-card-desc">未経験でも日給15,000〜18,000円。経験者は20,000円〜。急募エリアならではの好条件で、初日からしっかり稼げます。</p>
+        <p>未経験でも日給15,000〜18,000円。経験者は20,000円〜。急募エリアならではの好条件で、初日からしっかり稼げます。</p>
       </div>
-      <div class="why-card">
-        <div class="why-num">02</div>
+      <div class="reason-card">
+        <div class="reason-num">02 / TRAVEL</div>
         <h3>出張手当・旅費を全額支給</h3>
-        <p class="why-card-desc">県外からの出張対応が可能な方には、旅費交通費を全額支給。さらに県外出張手当も別途お支払いします。稼ぎたい方に最適です。</p>
+        <p>県外からの出張対応が可能な方には、旅費交通費を全額支給。さらに県外出張手当も別途お支払いします。</p>
       </div>
-      <div class="why-card">
-        <div class="why-num">03</div>
+      <div class="reason-card">
+        <div class="reason-num">03 / NO OVERTIME</div>
         <h3>実働8時間・残業ほぼなし</h3>
-        <p class="why-card-desc">稼働は実働8時間ぴったり。だらだら残業はありません。希望休は月3日まで申請可能(土日祝を除く平日)。</p>
+        <p>稼働は実働8時間ぴったり。だらだら残業はありません。希望休は月3日まで申請可能（土日祝を除く平日）。</p>
       </div>
-      <div class="why-card">
-        <div class="why-num">04</div>
+      <div class="reason-card">
+        <div class="reason-num">04 / FAST</div>
         <h3>スピード採用</h3>
-        <p class="why-card-desc">急募のため選考もスピーディー。応募から最短7日で内定、最短10日で現場デビューも可能です。すぐ働きたい方歓迎。</p>
+        <p>急募のため選考もスピーディー。応募から最短7日で内定、最短10日で現場デビューも可能です。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PAY DETAIL -->
-<section class="paydetail" id="pay">
-  <div class="section-inner">
-    <span class="section-label">SALARY</span>
-    <h2 class="section-title">給与の<span class="red">詳細</span>。</h2>
-    <p class="section-sub">急募エリアの給与体系です。未経験でも高水準、経験者はさらに優遇します。</p>
-    <div class="pay-cards">
-      <div class="pay-card">
-        <div class="pay-card-label">未経験 / NO EXP.</div>
-        <div class="pay-card-amount">15,000<span class="small">〜18,000円</span></div>
-        <div class="pay-card-note">日給/日額・1日実働8時間<br>月収例:300,000円〜(月20日稼働)</div>
-      </div>
-      <div class="pay-card exp">
-        <div class="pay-card-label">経験者 / EXPERIENCED</div>
-        <div class="pay-card-amount">20,000<span class="small">円〜</span></div>
-        <div class="pay-card-note">日給/日額・1日実働8時間<br>月収例:400,000円〜(月20日稼働)</div>
-      </div>
+<section class="lp-section">
+  <div class="lp-section-inner">
+    <div class="section-label" data-reveal>— SALARY</div>
+    <h2 class="section-title" data-reveal>給与の詳細。</h2>
+    <p class="section-sub" data-reveal>急募エリアの給与体系です。未経験でも高水準、経験者はさらに優遇します。</p>
+    <div class="data-table" data-reveal-stagger>
+      <div class="data-row"><div class="data-key">未経験</div><div class="data-val"><strong>日給 15,000〜18,000円</strong><br>月20日稼働で月収 300,000円〜</div></div>
+      <div class="data-row"><div class="data-key">経験者</div><div class="data-val"><strong>日給 20,000円〜</strong><br>月20日稼働で月収 400,000円〜</div></div>
+      <div class="data-row"><div class="data-key">出張手当</div><div class="data-val">出張対応可能な方には旅費交通費全額支給 + 県外出張手当も別途お支払い（北海道・静岡各エリア）</div></div>
+      <div class="data-row"><div class="data-key">試用期間</div><div class="data-val">3ヶ月（本採用と同条件）</div></div>
+      <div class="data-row"><div class="data-key">支払</div><div class="data-val">月払い</div></div>
     </div>
-    <div class="pay-extra">
-      <div class="pay-extra-icon">+α</div>
-      <div class="pay-extra-text">
-        <strong>出張対応が可能な方は、さらに優遇。</strong><br>
-        旅費交通費は全額支給。県外出張手当も別途お支払いします。北海道・静岡の各エリアへの出張で、収入アップのチャンスがあります。
+  </div>
+</section>
+
+<section class="lp-section alt">
+  <div class="lp-section-inner">
+    <div class="section-label" data-reveal>— CONDITIONS</div>
+    <h2 class="section-title" data-reveal>募集要項</h2>
+    <p class="section-sub" data-reveal>気になる条件を、ひとめで確認できます。</p>
+    <div class="data-table" data-reveal-stagger>
+      <div class="data-row"><div class="data-key">募集エリア</div><div class="data-val"><strong>北海道全域（札幌市中心）・静岡全域（静岡市・浜松市中心）</strong></div></div>
+      <div class="data-row"><div class="data-key">職種</div><div class="data-val">携帯販売スタッフ（docomo / au / SoftBank / 楽天モバイル / 格安SIM / 光回線）</div></div>
+      <div class="data-row"><div class="data-key">雇用形態</div><div class="data-val">契約社員 または 業務委託（選択可・正社員登用あり）<br><small>※業務委託の場合は別の給与体系（半年ごとの単価改定制度）あり。詳細は面談時に相談。</small></div></div>
+      <div class="data-row"><div class="data-key">給与</div><div class="data-val">未経験 <strong>日給 15,000〜18,000円</strong> / 経験者 <strong>日給 20,000円〜</strong></div></div>
+      <div class="data-row"><div class="data-key">勤務時間</div><div class="data-val">10:00〜19:00 または 11:00〜20:00（実働8時間ぴったり・定時退社）</div></div>
+      <div class="data-row"><div class="data-key">休日</div><div class="data-val">週休2日制・希望休は月3日まで申請可能（土日祝を除く平日）</div></div>
+      <div class="data-row"><div class="data-key">手当・待遇</div><div class="data-val">出張手当・旅費交通費 全額支給 / 交通費全額負担 / 研修制度あり / 個人ノルマなし</div></div>
+      <div class="data-row"><div class="data-key">応募資格</div><div class="data-val">学歴・経験不問、18歳以上、未経験歓迎。お客様や店舗スタッフに誠実で丁寧な対応ができる方。出張対応が可能な方は特に歓迎。</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="lp-section">
+  <div class="lp-section-inner">
+    <div class="section-label" data-reveal>— FLOW</div>
+    <h2 class="section-title" data-reveal>最短7日で内定。</h2>
+    <p class="section-sub" data-reveal>急募のため、選考はスピーディーに進めます。「すぐ働きたい」にお応えします。</p>
+    <div class="reason-grid" data-reveal-stagger>
+      <div class="reason-card">
+        <div class="reason-num">STEP 01</div>
+        <h3>WEB応募（最短1分）</h3>
+        <p>フォームから簡単に応募。電話・LINEでのご相談も受け付けています。</p>
+      </div>
+      <div class="reason-card">
+        <div class="reason-num">STEP 02</div>
+        <h3>オンライン面談</h3>
+        <p>業務内容・条件をご説明。エリアや出張可否、希望の働き方を伺います。</p>
+      </div>
+      <div class="reason-card">
+        <div class="reason-num">STEP 03</div>
+        <h3>内定（最短7日）</h3>
+        <p>急募のため選考結果は1〜3日以内にご連絡。スピード内定が可能です。</p>
+      </div>
+      <div class="reason-card">
+        <div class="reason-num">STEP 04</div>
+        <h3>研修 → 現場デビュー</h3>
+        <p>未経験でも研修で基礎から学べます。最短10日で現場デビューも可能。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONDITIONS -->
-<section class="cond">
-  <div class="section-inner">
-    <span class="section-label">CONDITIONS</span>
-    <h2 class="section-title">募集要項。</h2>
-    <p class="section-sub">気になる条件を、ひとめで確認できます。</p>
-    <div class="cond-table">
-      <div class="cond-row">
-        <div class="cond-key">募集エリア</div>
-        <div class="cond-val"><span class="hl">北海道全域(札幌市中心)・静岡全域(静岡市・浜松市中心)</span></div>
-      </div>
-      <div class="cond-row">
-        <div class="cond-key">職種</div>
-        <div class="cond-val">携帯販売スタッフ(docomo / au / SoftBank / 楽天モバイル / 格安SIM / 光回線)</div>
-      </div>
-      <div class="cond-row">
-        <div class="cond-key">雇用形態</div>
-        <div class="cond-val">契約社員 または 業務委託(選択可・正社員登用あり)</div>
-      </div>
-      <div class="cond-row">
-        <div class="cond-key">給与</div>
-        <div class="cond-val">未経験:<span class="hl">日給15,000〜18,000円</span> / 経験者:<span class="hl">日給20,000円〜</span></div>
-      </div>
-      <div class="cond-row">
-        <div class="cond-key">勤務時間</div>
-        <div class="cond-val">10:00〜19:00 または 11:00〜20:00(<span class="hl">実働8時間ぴったり・定時退社</span>)</div>
-      </div>
-      <div class="cond-row">
-        <div class="cond-key">休日</div>
-        <div class="cond-val">週休2日制・希望休は月3日まで申請可能(土日祝を除く平日)</div>
-      </div>
-      <div class="cond-row">
-        <div class="cond-key">手当・待遇</div>
-        <div class="cond-val"><span class="hl">出張手当・旅費交通費 全額支給</span>/ 交通費全額負担 / 研修制度あり / 個人ノルマなし</div>
-      </div>
-      <div class="cond-row">
-        <div class="cond-key">応募資格</div>
-        <div class="cond-val">学歴・経験不問、18歳以上、未経験歓迎。お客様や店舗スタッフに誠実で丁寧な対応ができる方。出張対応が可能な方は特に歓迎。</div>
-      </div>
+<section class="apply-section" id="apply">
+  <div class="apply-inner">
+    <div class="section-label" data-reveal>— APPLY NOW</div>
+    <h2 data-reveal>今が、応募のタイミングです。</h2>
+    <p data-reveal>北海道・静岡エリアは、今が応募のチャンスです。「まずは話を聞きたい」「出張できるか相談したい」——そんな段階でも大歓迎。お気軽にご連絡ください。</p>
+    <div class="apply-btns" data-reveal>
+      <a href="#" class="btn btn-primary" data-action="apply">今すぐWEBで応募 →</a>
+      <a href="#" class="btn btn-outline" data-action="line">LINEで相談する</a>
     </div>
+    <div class="apply-note">応募 → 面談 → 内定 / 最短7日</div>
   </div>
 </section>
 
-<!-- STEP -->
-<section class="step">
-  <div class="section-inner">
-    <span class="section-label">FLOW</span>
-    <h2 class="section-title">最短<span class="red">7日</span>で内定。</h2>
-    <p class="section-sub">急募のため、選考はスピーディーに進めます。「すぐ働きたい」にお応えします。</p>
-    <div class="step-list">
-      <div class="step-item">
-        <div class="step-num">01</div>
-        <div class="step-content">
-          <h4>WEB応募(最短1分)</h4>
-          <p>フォームから簡単に応募。電話・LINEでのご相談も受け付けています。</p>
-        </div>
-      </div>
-      <div class="step-item">
-        <div class="step-num">02</div>
-        <div class="step-content">
-          <h4>オンライン面談</h4>
-          <p>業務内容・条件をご説明。エリアや出張可否、希望の働き方を伺います。</p>
-        </div>
-      </div>
-      <div class="step-item">
-        <div class="step-num">03</div>
-        <div class="step-content">
-          <h4>内定(最短7日)</h4>
-          <p>急募のため選考結果は1〜3日以内にご連絡。スピード内定が可能です。</p>
-        </div>
-      </div>
-      <div class="step-item">
-        <div class="step-num">04</div>
-        <div class="step-content">
-          <h4>研修 → 現場デビュー</h4>
-          <p>未経験でも研修で基礎から学べます。最短10日で現場デビューも可能。</p>
-        </div>
-      </div>
+<footer class="lp-footer">
+  <div class="container">
+    <div class="lp-footer-company">
+      <strong>MinaTech株式会社</strong> ｜ 〒251-0055 神奈川県藤沢市南藤沢3-12 クリオ藤沢駅前 7階<br>
+      TEL <a href="tel:0466960313">0466-96-0313</a> ｜ 採用窓口 <a href="mailto:recruit@minatech1210.com">recruit@minatech1210.com</a> ｜ 法人番号 9010701041936
     </div>
+    <div class="lp-footer-copy">© 2026 MinaTech株式会社</div>
   </div>
-</section>
-
-<!-- APPLY -->
-<section class="apply" id="apply">
-  <div class="apply-inner section-inner">
-    <h2>
-      人手が足りていない今が、<br>
-      <span class="yellow">いちばん稼げる。</span>
-    </h2>
-    <p>
-      北海道・静岡エリアは、今が応募のチャンスです。<br>
-      「まずは話を聞きたい」「出張できるか相談したい」<br>
-      そんな段階でも大歓迎。お気軽にご連絡ください。
-    </p>
-    <div class="apply-btns">
-      <a href="#" class="btn-apply-main" data-action="apply">今すぐWEBで応募 →</a>
-      <a href="#" class="btn-apply-sub" data-action="line">LINEで相談する</a>
-    </div>
-    <p class="apply-note">APPLICATION → INTERVIEW → OFFER / 7 DAYS</p>
-  </div>
-</section>
-
-<footer>
-  <div style="margin-bottom: 16px; font-size: 12px; line-height: 1.85; color: rgba(255,255,255,0.72); font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif; letter-spacing: normal;">
-    <strong style="font-weight: 700; color: rgba(255,255,255,0.92);">MinaTech株式会社</strong> ｜ 〒251-0055 神奈川県藤沢市南藤沢3-12 クリオ藤沢駅前 7階<br>
-    TEL <a href="tel:0466960313" style="color: inherit; text-decoration: none;">0466-96-0313</a> ｜ 採用窓口 <a href="mailto:recruit@minatech1210.com" style="color: inherit; text-decoration: none;">recruit@minatech1210.com</a> ｜ 法人番号 9010701041936
-  </div>
-  © 2026 URGENT.RECRUIT — HOKKAIDO / SHIZUOKA
 </footer>
 
 <script defer src="/assets/config.js"></script>
