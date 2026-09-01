@@ -15,962 +15,112 @@
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="index,follow">
-<!-- JobPosting JSON-LD（Phase 2 で有効化済） -->
 <script type="application/ld+json">
 {"@context":"https://schema.org/","@type":"JobPosting","title":"携帯販売スタッフ（両立しやすい働き方）","description":"家庭と仕事の両立を大切にしたい方へ。週3日〜の稼働、平日休み、保育園の送迎に合わせたシフト調整など、ライフスタイルに合わせた働き方ができる携帯販売の仕事です。","employmentType":["CONTRACTOR","PART_TIME"],"datePosted":"2026-05-23","validThrough":"2026-11-30T23:59:59+09:00","hiringOrganization":{"@type":"Organization","name":"MinaTech株式会社","identifier":{"@type":"PropertyValue","name":"法人番号","value":"9010701041936"},"telephone":"+81-466-96-0313","address":{"@type":"PostalAddress","postalCode":"251-0055","addressCountry":"JP","addressRegion":"神奈川県","addressLocality":"藤沢市","streetAddress":"南藤沢3-12 クリオ藤沢駅前 7階"}},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","addressCountry":"JP","addressRegion":"東京都"}},"baseSalary":{"@type":"MonetaryAmount","currency":"JPY","value":{"@type":"QuantitativeValue","minValue":15000,"maxValue":20000,"unitText":"DAY"}}}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Zen+Maru+Gothic:wght@400;500;700;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-<style>
-:root {
-  --terra: #C97B5C;
-  --terra-deep: #A45A3D;
-  --sage: #8FA876;
-  --sage-deep: #5F7A4D;
-  --cream: #F8F1E6;
-  --cream-deep: #EFE5D2;
-  --sand: #E8D9BD;
-  --ink: #3A2E1F;
-  --ink-soft: #6B5A45;
-  --white: #FEFCF7;
-  --rose: #DBA89C;
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-html {
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-  width: 100%;
-}
-
-body {
-  font-family: 'Zen Maru Gothic', -apple-system, sans-serif;
-  color: var(--ink);
-  background: var(--cream);
-  line-height: 1.9;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  width: 100%;
-  position: relative;
-}
-
-section { overflow-x: clip; }
-
-/* ========== HEADER ========== */
-.header {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  background: rgba(248, 241, 230, 0.92);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(58, 46, 31, 0.06);
-}
-.header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 18px 32px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.logo {
-  font-family: 'DM Serif Display', serif;
-  font-style: italic;
-  font-size: 24px;
-  color: var(--ink);
-  letter-spacing: -0.01em;
-}
-.logo-jp {
-  font-family: 'Zen Maru Gothic', sans-serif;
-  font-size: 11px;
-  font-weight: 500;
-  color: var(--ink-soft);
-  margin-left: 8px;
-  letter-spacing: 0.15em;
-}
-.cta-header {
-  padding: 12px 26px;
-  background: var(--terra);
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 13px;
-  border-radius: 100px;
-  transition: all 0.3s;
-  letter-spacing: 0.05em;
-}
-.cta-header:hover { background: var(--terra-deep); }
-
-/* ========== HERO ========== */
-.hero {
-  min-height: 95vh;
-  position: relative;
-  padding: 140px 32px 100px;
-  overflow: hidden;
-  background:
-    radial-gradient(ellipse at top right, rgba(201, 123, 92, 0.08), transparent 50%),
-    radial-gradient(ellipse at bottom left, rgba(143, 168, 118, 0.08), transparent 60%),
-    var(--cream);
-  width: 100%;
-  max-width: 100vw;
-}
-.hero-decoration {
-  position: absolute;
-  top: 12%;
-  right: 4%;
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--rose) 0%, transparent 70%);
-  opacity: 0.4;
-  filter: blur(40px);
-  pointer-events: none;
-}
-.hero-decoration-2 {
-  position: absolute;
-  bottom: 15%;
-  left: -5%;
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--sage) 0%, transparent 70%);
-  opacity: 0.2;
-  filter: blur(50px);
-  pointer-events: none;
-}
-.hero-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
-}
-.hero-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 20px;
-  background: var(--white);
-  border: 1px solid rgba(201, 123, 92, 0.25);
-  border-radius: 100px;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--terra-deep);
-  margin-bottom: 36px;
-  animation: fadeUp 0.8s 0.2s both;
-}
-.hero-tag::before {
-  content: '◆';
-  color: var(--terra);
-  font-size: 10px;
-}
-.hero h1 {
-  font-family: 'Zen Maru Gothic', sans-serif;
-  font-weight: 900;
-  font-size: clamp(36px, 6vw, 80px);
-  line-height: 1.4;
-  letter-spacing: -0.01em;
-  color: var(--ink);
-  margin-bottom: 36px;
-  animation: fadeUp 0.8s 0.4s both;
-}
-.hero h1 .accent {
-  color: var(--terra);
-  position: relative;
-}
-.hero h1 .underline-wave {
-  position: relative;
-  display: inline-block;
-}
-.hero h1 .underline-wave::after {
-  content: '';
-  position: absolute;
-  left: 0; right: 0;
-  bottom: 4px;
-  height: 12px;
-  background: rgba(143, 168, 118, 0.35);
-  z-index: -1;
-}
-.hero-script {
-  font-family: 'DM Serif Display', serif;
-  font-style: italic;
-  color: var(--sage-deep);
-}
-.hero-sub {
-  font-size: clamp(15px, 1.3vw, 18px);
-  color: var(--ink-soft);
-  max-width: 600px;
-  margin-bottom: 56px;
-  font-weight: 500;
-  line-height: 2;
-  animation: fadeUp 0.8s 0.6s both;
-}
-.hero-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-  max-width: 720px;
-  margin-bottom: 56px;
-  animation: fadeUp 0.8s 0.8s both;
-}
-.stat {
-  background: var(--white);
-  padding: 24px 20px;
-  border-radius: 16px;
-  border: 1px solid rgba(58, 46, 31, 0.06);
-}
-.stat-num {
-  font-family: 'DM Serif Display', serif;
-  font-size: clamp(28px, 3.2vw, 40px);
-  color: var(--terra);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  margin-bottom: 4px;
-}
-.stat-num .unit { font-size: 0.5em; color: var(--ink-soft); margin-left: 4px; }
-.stat-label {
-  font-size: 13px;
-  color: var(--ink-soft);
-  font-weight: 600;
-  line-height: 1.5;
-}
-.hero-cta-group {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  animation: fadeUp 0.8s 1s both;
-}
-.btn-primary {
-  padding: 22px 44px;
-  background: var(--terra);
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 16px;
-  border-radius: 100px;
-  transition: all 0.3s;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  box-shadow: 0 8px 24px rgba(201, 123, 92, 0.25);
-}
-.btn-primary:hover { background: var(--terra-deep); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(201, 123, 92, 0.35); }
-.btn-secondary {
-  padding: 22px 44px;
-  background: transparent;
-  color: var(--ink);
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 16px;
-  border: 2px solid var(--ink);
-  border-radius: 100px;
-  transition: all 0.3s;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-.btn-secondary:hover { background: var(--ink); color: var(--white); }
-
-/* ========== SECTION COMMON ========== */
-section { padding: 110px 32px; position: relative; }
-.section-inner { max-width: 1200px; margin: 0 auto; }
-.section-label {
-  font-family: 'DM Serif Display', serif;
-  font-style: italic;
-  font-size: 16px;
-  color: var(--terra);
-  margin-bottom: 16px;
-  display: block;
-}
-.section-label::before { content: '— '; }
-.section-title {
-  font-family: 'Zen Maru Gothic', sans-serif;
-  font-weight: 900;
-  font-size: clamp(28px, 4vw, 48px);
-  line-height: 1.5;
-  color: var(--ink);
-  margin-bottom: 24px;
-  letter-spacing: -0.01em;
-}
-.section-sub {
-  font-size: 16px;
-  color: var(--ink-soft);
-  margin-bottom: 64px;
-  max-width: 680px;
-  line-height: 2;
-}
-
-/* ========== STORY SECTION (悩み起点) ========== */
-.story {
-  background: var(--white);
-  position: relative;
-}
-.story::before {
-  content: '';
-  position: absolute;
-  top: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 2px;
-  background: var(--terra);
-}
-.story-inner {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-.story-quote {
-  font-family: 'Klee One', serif;
-  font-size: clamp(22px, 2.6vw, 32px);
-  line-height: 2.2;
-  color: var(--ink);
-  margin-bottom: 48px;
-  position: relative;
-  padding: 0 20px;
-}
-.story-quote::before {
-  content: '"';
-  font-family: 'DM Serif Display', serif;
-  font-style: italic;
-  font-size: 100px;
-  color: var(--rose);
-  position: absolute;
-  top: -30px;
-  left: -10px;
-  opacity: 0.5;
-  line-height: 1;
-}
-.story-attribution {
-  font-size: 14px;
-  color: var(--ink-soft);
-  font-weight: 500;
-}
-.story-divider {
-  margin: 56px auto;
-  text-align: center;
-  font-family: 'DM Serif Display', serif;
-  font-style: italic;
-  font-size: 28px;
-  color: var(--terra);
-}
-.story-answer {
-  font-size: clamp(20px, 2.4vw, 30px);
-  font-weight: 700;
-  line-height: 1.8;
-  color: var(--ink);
-}
-.story-answer .highlight {
-  background: linear-gradient(transparent 65%, var(--sand) 65%);
-  padding: 0 4px;
-}
-
-/* ========== STATS SECTION (統計データ) ========== */
-.stats-section { background: var(--cream-deep); }
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
-}
-.stat-card {
-  background: var(--white);
-  padding: 48px 40px;
-  border-radius: 24px;
-  border: 1px solid rgba(58, 46, 31, 0.05);
-  transition: all 0.3s;
-}
-.stat-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(58, 46, 31, 0.06); }
-.stat-card-num {
-  font-family: 'DM Serif Display', serif;
-  font-size: clamp(40px, 5vw, 64px);
-  color: var(--terra);
-  line-height: 1;
-  margin-bottom: 16px;
-  letter-spacing: -0.03em;
-}
-.stat-card-num .unit { font-size: 0.4em; color: var(--ink-soft); margin-left: 6px; }
-.stat-card-label {
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--ink);
-  margin-bottom: 12px;
-  line-height: 1.5;
-}
-.stat-card-desc {
-  font-size: 14px;
-  color: var(--ink-soft);
-  line-height: 1.9;
-  margin-bottom: 16px;
-}
-.stat-card-source {
-  font-size: 11px;
-  color: var(--ink-soft);
-  font-style: italic;
-  padding-top: 16px;
-  border-top: 1px solid rgba(58, 46, 31, 0.1);
-  letter-spacing: 0.03em;
-}
-
-/* ========== WHY SECTION ========== */
-.why {
-  background: var(--white);
-  position: relative;
-  overflow: hidden;
-}
-.why::before {
-  content: '';
-  position: absolute;
-  top: -150px;
-  right: -150px;
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(143, 168, 118, 0.1) 0%, transparent 70%);
-}
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  margin-top: 64px;
-}
-.why-item {
-  background: var(--cream);
-  padding: 48px 40px;
-  border-radius: 24px;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.4s;
-}
-.why-item:hover { transform: translateY(-6px); }
-.why-item::before {
-  content: '';
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: var(--rose);
-  opacity: 0.15;
-}
-.why-num {
-  font-family: 'DM Serif Display', serif;
-  font-style: italic;
-  font-size: 18px;
-  color: var(--terra);
-  margin-bottom: 24px;
-  letter-spacing: 0.05em;
-}
-.why-item h3 {
-  font-family: 'Zen Maru Gothic', sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 1.5;
-  color: var(--ink);
-  margin-bottom: 16px;
-}
-.why-item p {
-  color: var(--ink-soft);
-  font-size: 15px;
-  line-height: 2;
-}
-
-/* ========== VOICE SECTION ========== */
-.voice {
-  background: linear-gradient(180deg, var(--cream-deep) 0%, var(--cream) 100%);
-}
-.voice-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-  margin-top: 56px;
-}
-.voice-card {
-  background: var(--white);
-  padding: 36px 32px;
-  border-radius: 20px;
-  border: 1px solid rgba(58, 46, 31, 0.06);
-  position: relative;
-  transition: all 0.3s;
-}
-.voice-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(58, 46, 31, 0.06); }
-.video-placeholder-vert {
-  position: relative;
-  aspect-ratio: 9 / 16;
-  background: linear-gradient(135deg, var(--cream-deep) 0%, var(--sand) 100%);
-  border-radius: 16px;
-  margin-bottom: 24px;
-  overflow: hidden;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 12px;
-}
-.play-btn {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: var(--white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 20px rgba(58, 46, 31, 0.15);
-  transition: all 0.3s;
-}
-.video-placeholder-vert:hover .play-btn { transform: scale(1.1); }
-.play-btn svg { width: 22px; height: 22px; fill: var(--terra); margin-left: 3px; }
-.video-label {
-  font-family: 'DM Serif Display', serif;
-  font-style: italic;
-  font-size: 13px;
-  color: var(--ink-soft);
-}
-.voice-quote {
-  font-family: 'Klee One', serif;
-  font-size: 17px;
-  line-height: 1.8;
-  color: var(--ink);
-  margin-bottom: 24px;
-  min-height: 90px;
-}
-.voice-meta {
-  padding-top: 20px;
-  border-top: 1px solid rgba(58, 46, 31, 0.08);
-}
-.voice-name {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--ink);
-  margin-bottom: 4px;
-}
-.voice-role {
-  font-size: 12px;
-  color: var(--ink-soft);
-  letter-spacing: 0.03em;
-}
-
-/* ========== ONE DAY SECTION ========== */
-.oneday { background: var(--white); }
-.timeline {
-  position: relative;
-  max-width: 760px;
-  margin: 0 auto;
-  padding-left: 40px;
-}
-.timeline::before {
-  content: '';
-  position: absolute;
-  top: 16px;
-  bottom: 16px;
-  left: 14px;
-  width: 2px;
-  background: linear-gradient(180deg, var(--terra) 0%, var(--sage) 100%);
-}
-.timeline-item {
-  position: relative;
-  padding-bottom: 40px;
-}
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  top: 12px;
-  left: -33px;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--white);
-  border: 3px solid var(--terra);
-}
-.timeline-item:last-child { padding-bottom: 0; }
-.timeline-time {
-  font-family: 'DM Serif Display', serif;
-  font-size: 22px;
-  font-style: italic;
-  color: var(--terra);
-  margin-bottom: 8px;
-  letter-spacing: 0.02em;
-}
-.timeline-title {
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--ink);
-  margin-bottom: 6px;
-}
-.timeline-desc {
-  color: var(--ink-soft);
-  font-size: 14px;
-  line-height: 1.9;
-}
-
-/* ========== SUPPORT SECTION (具体的サポート) ========== */
-.support { background: var(--cream-deep); }
-.support-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0;
-  margin-top: 56px;
-  border-radius: 24px;
-  overflow: hidden;
-  background: var(--white);
-}
-.support-item {
-  padding: 36px 32px;
-  border-bottom: 1px solid rgba(58, 46, 31, 0.08);
-  display: flex;
-  align-items: flex-start;
-  gap: 18px;
-}
-.support-item:nth-child(2n+1) { border-right: 1px solid rgba(58, 46, 31, 0.08); }
-.support-item:nth-last-child(-n+2) { border-bottom: none; }
-.support-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--cream);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  font-size: 18px;
-  font-family: 'DM Serif Display', serif;
-  font-style: italic;
-  color: var(--terra);
-  font-weight: 600;
-}
-.support-content h4 {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--ink);
-  margin-bottom: 8px;
-  line-height: 1.4;
-}
-.support-content p {
-  font-size: 13px;
-  color: var(--ink-soft);
-  line-height: 1.8;
-}
-
-/* ========== FAQ SECTION ========== */
-.faq { background: var(--white); }
-.faq-list { max-width: 880px; margin: 56px auto 0; }
-.faq-item {
-  background: var(--cream);
-  border-radius: 16px;
-  margin-bottom: 14px;
-  overflow: hidden;
-  transition: all 0.3s;
-}
-.faq-item:hover { background: var(--cream-deep); }
-.faq-q {
-  padding: 26px 32px;
-  font-weight: 700;
-  font-size: 16px;
-  color: var(--ink);
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-}
-.faq-q::before {
-  content: 'Q.';
-  font-family: 'DM Serif Display', serif;
-  font-style: italic;
-  font-weight: 700;
-  color: var(--terra);
-  font-size: 24px;
-  flex-shrink: 0;
-}
-.faq-q-text { flex: 1; line-height: 1.6; }
-.faq-toggle {
-  width: 32px;
-  height: 32px;
-  border: 1.5px solid var(--ink);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  transition: all 0.3s;
-  flex-shrink: 0;
-  background: var(--white);
-}
-.faq-item.open .faq-toggle { background: var(--terra); color: var(--white); border-color: var(--terra); transform: rotate(45deg); }
-.faq-a {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.4s ease;
-  padding: 0 32px;
-}
-.faq-item.open .faq-a { max-height: 500px; padding: 0 32px 26px; }
-.faq-a-inner {
-  padding-left: 36px;
-  color: var(--ink-soft);
-  line-height: 2;
-  font-size: 14px;
-  border-left: 2px solid var(--rose);
-}
-
-/* ========== APPLY SECTION ========== */
-.apply {
-  background:
-    radial-gradient(ellipse at top right, rgba(201, 123, 92, 0.15), transparent 50%),
-    radial-gradient(ellipse at bottom left, rgba(143, 168, 118, 0.12), transparent 60%),
-    var(--ink);
-  color: var(--white);
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.apply-inner { position: relative; z-index: 2; }
-.apply h2 {
-  font-family: 'Zen Maru Gothic', sans-serif;
-  font-size: clamp(28px, 4.5vw, 56px);
-  font-weight: 900;
-  line-height: 1.5;
-  margin-bottom: 24px;
-}
-.apply h2 .accent {
-  font-family: 'DM Serif Display', serif;
-  font-style: italic;
-  color: var(--rose);
-}
-.apply p {
-  color: rgba(254, 252, 247, 0.75);
-  font-size: 16px;
-  margin-bottom: 48px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 2;
-}
-.apply-btns {
-  display: flex;
-  gap: 14px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 32px;
-}
-.btn-apply-main {
-  padding: 22px 44px;
-  background: var(--terra);
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 16px;
-  border-radius: 100px;
-  transition: all 0.3s;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  box-shadow: 0 8px 24px rgba(201, 123, 92, 0.4);
-}
-.btn-apply-main:hover { background: var(--terra-deep); transform: translateY(-2px); }
-.btn-apply-sub {
-  padding: 22px 44px;
-  background: transparent;
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 16px;
-  border: 2px solid rgba(255, 255, 255, 0.25);
-  border-radius: 100px;
-  transition: all 0.3s;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-.btn-apply-sub:hover { border-color: var(--white); background: rgba(255, 255, 255, 0.05); }
-.apply-note {
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.5);
-  letter-spacing: 0.05em;
-}
-
-/* ========== FOOTER ========== */
-footer {
-  background: var(--ink);
-  color: rgba(254, 252, 247, 0.5);
-  padding: 32px;
-  text-align: center;
-  font-size: 12px;
-  letter-spacing: 0.05em;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ========== RESPONSIVE ========== */
-@media (max-width: 900px) {
-  .header-inner { padding: 14px 18px; }
-  .hero { padding: 110px 18px 70px; }
-  section { padding: 70px 18px; }
-  .hero-stats { grid-template-columns: 1fr; gap: 14px; }
-  .stats-grid { grid-template-columns: 1fr; }
-  .why-grid { grid-template-columns: 1fr; }
-  .voice-grid { grid-template-columns: 1fr; }
-  .support-grid { grid-template-columns: 1fr; }
-  .support-item { border-right: none !important; border-bottom: 1px solid rgba(58, 46, 31, 0.08) !important; }
-  .support-item:last-child { border-bottom: none !important; }
-  .apply-btns { flex-direction: column; align-items: stretch; padding: 0 16px; }
-  .btn-apply-main, .btn-apply-sub { justify-content: center; padding: 20px 32px; }
-  .timeline { padding-left: 32px; }
-  .faq-q { padding: 22px 24px; font-size: 14px; gap: 12px; }
-  .faq-item.open .faq-a { padding: 0 24px 24px; }
-  .faq-a-inner { padding-left: 18px; }
-  .stat-card { padding: 36px 28px; }
-  .why-item { padding: 36px 28px; }
-  .hero-decoration { width: 140px; height: 140px; }
-  .hero-decoration-2 { width: 180px; height: 180px; }
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/theme.css">
 </head>
 <body data-lp="balance">
 
-<header class="header">
-  <div class="header-inner">
-    <div>
-      <span class="logo">balance.</span>
-      <span class="logo-jp">私らしく、働く。</span>
-    </div>
-    <a href="#apply" class="cta-header">応募する →</a>
+<header class="lp-header">
+  <div class="lp-header-inner">
+    <div class="lp-logo">MinaTech<span class="sub">BALANCE</span></div>
+    <a href="#apply" class="lp-header-cta">応募する →</a>
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-decoration"></div>
-  <div class="hero-decoration-2"></div>
-  <div class="hero-inner">
-    <div class="hero-tag">首都圏｜週3〜OK・直行直帰・平日休み相談可</div>
-    <div class="hero-tag" style="background: var(--terra); color: var(--white); border: none; margin-left: 8px;">◆ 北海道・静岡エリア 急募</div>
-    <h1>
+<section class="lp-hero">
+  <div class="lp-hero-inner">
+    <span class="lp-hero-tag" data-reveal>両立支援 / 首都圏 / 週3〜相談可</span>
+    <h1 class="lp-hero-title" data-reveal>
       家庭も、自分も。<br>
-      <span class="hero-script">どちらも、</span><br>
-      <span class="underline-wave">大切にできる仕事を。</span>
+      <span class="accent">どちらも大切にできる</span>仕事を。
     </h1>
-    <p class="hero-sub">
-      首都圏で携帯販売スタッフを募集しています。<br>
-      週3日からの稼働、保育園の送り迎えに合わせた時間調整、平日休み—<br>
-      暮らしのリズムに、仕事を合わせる働き方が、ここにあります。
+    <p class="lp-hero-sub" data-reveal>
+      首都圏で携帯販売スタッフを募集しています。<strong>週3日からの稼働、保育園の送迎に合わせた時間調整、平日休み。</strong>暮らしのリズムに、仕事を合わせる働き方が、ここにあります。ライフステージが変わっても続けられる制度を整えました。
     </p>
-    <div class="hero-stats">
-      <div class="stat">
-        <div class="stat-num">週3<span class="unit">日〜</span></div>
-        <div class="stat-label">稼働日数を相談可能</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">10:00<span class="unit">始業</span></div>
-        <div class="stat-label">朝の送り出し後でOK</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">直行<span class="unit">直帰</span></div>
-        <div class="stat-label">本社出社不要</div>
-      </div>
+    <div class="lp-hero-stats" data-reveal-stagger>
+      <div><div class="lp-stat-label">WORKDAYS</div><div class="lp-stat-val">週3日〜</div></div>
+      <div><div class="lp-stat-label">START TIME</div><div class="lp-stat-val">10:00〜</div></div>
+      <div><div class="lp-stat-label">COMMUTE</div><div class="lp-stat-val">直行直帰</div></div>
+      <div><div class="lp-stat-label">QUOTA</div><div class="lp-stat-val">個人ノルマなし</div></div>
     </div>
-    <div class="hero-cta-group">
-      <a href="#apply" class="btn-primary">まずは話を聞いてみる →</a>
+    <div class="lp-cta-group" data-reveal>
+      <a href="#" class="btn btn-primary" data-action="apply">まずは話を聞いてみる →</a>
+      <a href="#apply" class="btn btn-outline">詳細を見る</a>
     </div>
   </div>
 </section>
 
-<!-- STORY (悩み起点) -->
-<section class="story">
-  <div class="story-inner">
-    <p class="story-quote">
-      「フルタイムは、子育てとの両立がしんどい。<br>
-      かといって、扶養内のパートだと物足りない。<br>
-      ちょうどいい働き方って、どこにあるんだろう。」
-    </p>
-    <p class="story-attribution">— 30代・育児中の方からよくいただく相談</p>
-    <div class="story-divider">⌇</div>
-    <p class="story-answer">
-      その答えを、<br>
-      <span class="highlight">私たちが用意しました。</span>
-    </p>
-  </div>
-</section>
-
-<!-- STATS (確度A の統計データ) -->
-<section class="stats-section">
-  <div class="section-inner">
-    <span class="section-label">data</span>
-    <h2 class="section-title">「両立したい」を、<br>諦めなくていい時代へ。</h2>
-    <p class="section-sub">公的な調査データが示す、子育て世代のリアルな希望と、私たちが向き合いたい課題です。</p>
-    <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-card-num">69.5<span class="unit">%</span></div>
-        <div class="stat-card-label">第1子出産前後に就業を継続した妻の割合</div>
-        <p class="stat-card-desc">10年前は4割前後だったのに対し、近年は7割近くに上昇。「働き続けたい」は、もはや特別な選択ではなく、当たり前の希望になりました。</p>
-        <p class="stat-card-source">出典:国立社会保障・人口問題研究所「第16回出生動向基本調査」(2015〜2019年出産の女性対象)</p>
+<section class="lp-section alt">
+  <div class="lp-section-inner">
+    <div class="section-label" data-reveal>— DATA</div>
+    <h2 class="section-title" data-reveal>「両立したい」を、<br>諦めなくていい時代へ。</h2>
+    <p class="section-sub" data-reveal>公的な調査データが示す、子育て世代のリアルな希望と、私たちが向き合いたい課題です。</p>
+    <div class="reason-grid" data-reveal-stagger>
+      <div class="reason-card">
+        <div class="reason-num">69.5%</div>
+        <h3>第1子出産前後に就業を継続した妻の割合</h3>
+        <p>10年前は4割前後だったのに対し、近年は7割近くに上昇。「働き続けたい」は、もはや特別な選択ではなく、当たり前の希望になりました。<br><small style="color:var(--color-ink-mute);">出典：国立社会保障・人口問題研究所「第16回出生動向基本調査」</small></p>
       </div>
-      <div class="stat-card">
-        <div class="stat-card-num">最多</div>
-        <div class="stat-card-label">「仕事と子育ての両立」が女性の理想ライフコース</div>
-        <p class="stat-card-desc">同調査において「女性のライフコース」の理想像として、男女ともに「仕事と子育ての両立」が初めて最多になりました。両立は「贅沢」ではなく「標準」へ。</p>
-        <p class="stat-card-source">出典:国立社会保障・人口問題研究所「第16回出生動向基本調査」</p>
+      <div class="reason-card">
+        <div class="reason-num">最多</div>
+        <h3>「仕事と子育ての両立」が理想ライフコース</h3>
+        <p>同調査において「女性のライフコース」の理想像として、男女ともに「仕事と子育ての両立」が初めて最多になりました。両立は「贅沢」ではなく「標準」へ。<br><small style="color:var(--color-ink-mute);">出典：国立社会保障・人口問題研究所「第16回出生動向基本調査」</small></p>
       </div>
-      <div class="stat-card">
-        <div class="stat-card-num">87.8<span class="unit">%</span></div>
-        <div class="stat-card-label">勤務時間を柔軟にしたいと考える子育て期女性</div>
-        <p class="stat-card-desc">在宅勤務やフレックスなど、自ら勤務時間をコントロールしたいというニーズは圧倒的多数。「決められた時間に拘束される働き方」が選択肢の上位ではなくなっています。</p>
-        <p class="stat-card-source">出典:NPO法人ママワーク研究所「2024年度 子育て期女性のキャリアに関する調査」</p>
+      <div class="reason-card">
+        <div class="reason-num">87.8%</div>
+        <h3>勤務時間を柔軟にしたい子育て期女性</h3>
+        <p>在宅勤務やフレックスなど、自ら勤務時間をコントロールしたいというニーズは圧倒的多数。決められた時間に拘束される働き方が上位ではなくなっています。<br><small style="color:var(--color-ink-mute);">出典：NPO法人ママワーク研究所「2024年度 子育て期女性のキャリアに関する調査」</small></p>
       </div>
-      <div class="stat-card">
-        <div class="stat-card-num">33.6<span class="unit">%</span></div>
-        <div class="stat-card-label">本業以外に副業を持つ子育て期女性</div>
-        <p class="stat-card-desc">3人に1人が副業を持つ時代に。1つの仕事に縛られず、家庭との両立を保ちつつ、自分らしい働き方を選ぶ流れが加速しています。</p>
-        <p class="stat-card-source">出典:NPO法人ママワーク研究所「2024年度 子育て期女性のキャリアに関する調査」</p>
+      <div class="reason-card">
+        <div class="reason-num">33.6%</div>
+        <h3>本業以外に副業を持つ子育て期女性</h3>
+        <p>3人に1人が副業を持つ時代に。1つの仕事に縛られず、家庭との両立を保ちつつ、自分らしい働き方を選ぶ流れが加速しています。<br><small style="color:var(--color-ink-mute);">出典：NPO法人ママワーク研究所「2024年度 子育て期女性のキャリアに関する調査」</small></p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHY 4つの理由 -->
-<section class="why">
-  <div class="section-inner">
-    <span class="section-label">why us</span>
-    <h2 class="section-title">家庭との両立を、<br>本気で支える4つの仕組み。</h2>
-    <p class="section-sub">「あったらいいな」を、「ちゃんとあります」へ。具体的な制度として用意しています。</p>
-    <div class="why-grid">
-      <div class="why-item">
-        <div class="why-num">— 01</div>
-        <h3>稼働日は、<br>あなたが決められます。</h3>
-        <p>週3日からの稼働を相談可能。子どもの行事、家族の体調、自分のリズム—暮らしの優先順位に合わせて、月の働き方を組み立てられます。</p>
+<section class="lp-section">
+  <div class="lp-section-inner">
+    <div class="section-label" data-reveal>— WHY US</div>
+    <h2 class="section-title" data-reveal>家庭との両立を、<br>本気で支える4つの仕組み。</h2>
+    <p class="section-sub" data-reveal>「あったらいいな」を、「ちゃんとあります」へ。具体的な制度として用意しています。</p>
+    <div class="reason-grid" data-reveal-stagger>
+      <div class="reason-card">
+        <div class="reason-num">01 / FLEXIBLE DAYS</div>
+        <h3>稼働日は、あなたが決められます</h3>
+        <p>週3日からの稼働を相談可能。子どもの行事、家族の体調、自分のリズム——暮らしの優先順位に合わせて、月の働き方を組み立てられます。</p>
       </div>
-      <div class="why-item">
-        <div class="why-num">— 02</div>
-        <h3>朝の送り出し後で<br>大丈夫な、10時始業。</h3>
+      <div class="reason-card">
+        <div class="reason-num">02 / LATE START</div>
+        <h3>朝の送り出し後で大丈夫な、10時始業</h3>
         <p>始業時間は10:00または11:00。保育園や学校の送り出しを終えてからでも、十分間に合う時間設計です。終業時間も19:00または20:00で固定残業なし。</p>
       </div>
-      <div class="why-item">
-        <div class="why-num">— 03</div>
-        <h3>直行直帰だから、<br>移動時間で疲弊しない。</h3>
+      <div class="reason-card">
+        <div class="reason-num">03 / COMMUTE</div>
+        <h3>直行直帰だから、移動時間で疲弊しない</h3>
         <p>本社出社の義務はなく、自宅から直接、配属店舗へ。お迎え時間の前に、もう家路につけます。交通費は当社が全額負担します。</p>
       </div>
-      <div class="why-item">
-        <div class="why-num">— 04</div>
-        <h3>急な早退・欠勤も、<br>チームで支え合います。</h3>
+      <div class="reason-card">
+        <div class="reason-num">04 / TEAM SUPPORT</div>
+        <h3>急な早退・欠勤も、チームで支え合います</h3>
         <p>個人ノルマはなく、チーム全体での目標達成を目指す仕組みです。子どもの急な発熱や家族の用事でも、お互い様の文化で安心して働けます。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ONEDAY -->
-<section class="oneday">
-  <div class="section-inner">
-    <span class="section-label">a day</span>
-    <h2 class="section-title">スタッフAさんの、<br>とある一日。</h2>
-    <p class="section-sub">週4稼働・3歳児の親・入社1年。実際の暮らしのリズム例です。</p>
-    <div class="timeline">
+<section class="lp-section alt">
+  <div class="lp-section-inner">
+    <div class="section-label" data-reveal>— A DAY</div>
+    <h2 class="section-title" data-reveal>スタッフAさんの、<br>とある一日。</h2>
+    <p class="section-sub" data-reveal>週4稼働・3歳児の親・入社1年。実際の暮らしのリズム例です。</p>
+    <div class="timeline" data-reveal-stagger>
       <div class="timeline-item">
         <div class="timeline-time">07:30</div>
         <div class="timeline-title">朝の支度・保育園へ送り出し</div>
@@ -1005,97 +155,27 @@ footer {
   </div>
 </section>
 
-<!-- SUPPORT -->
-<section class="support">
-  <div class="section-inner">
-    <span class="section-label">support</span>
-    <h2 class="section-title">あったらいいな、を<br>制度として用意しています。</h2>
-    <p class="section-sub">子育て・介護・自分の体調—生活のあらゆる場面で、安心して働ける仕組みを整えました。</p>
-    <div class="support-grid">
-      <div class="support-item">
-        <div class="support-icon">i</div>
-        <div class="support-content">
-          <h4>週3日からの稼働相談OK</h4>
-          <p>月の稼働日数を柔軟に決められます。短期での集中稼働や、長く続ける働き方、両方に対応可能です。</p>
-        </div>
-      </div>
-      <div class="support-item">
-        <div class="support-icon">ii</div>
-        <div class="support-content">
-          <h4>10時 or 11時始業・実働8時間で定時退社</h4>
-          <p>朝の送り出しを終えてから出勤OK。実働8時間ぴったりで延長なし、終業は19時または20時。お迎え・夕食の準備に間に合います。月の希望休は3日まで申請可能(土日祝を除く平日)。</p>
-        </div>
-      </div>
-      <div class="support-item">
-        <div class="support-icon">iii</div>
-        <div class="support-content">
-          <h4>個人ノルマなし</h4>
-          <p>チーム全体で目標を追う仕組みです。個人未達による減給は一切なく、急な早退・欠勤にもチームでカバーします。</p>
-        </div>
-      </div>
-      <div class="support-item">
-        <div class="support-icon">iv</div>
-        <div class="support-content">
-          <h4>直行直帰・転勤なし</h4>
-          <p>本社出社不要、転勤もなし。自宅近くの配属店舗で、長く安定して働ける環境です。</p>
-        </div>
-      </div>
-      <div class="support-item">
-        <div class="support-icon">v</div>
-        <div class="support-content">
-          <h4>交通費全額会社負担</h4>
-          <p>通勤費・案件先までの移動費は、すべて当社が負担します。家計の見通しが立てやすくなります。</p>
-        </div>
-      </div>
-      <div class="support-item">
-        <div class="support-icon">vi</div>
-        <div class="support-content">
-          <h4>雇用形態の柔軟な切り替え</h4>
-          <p>契約社員⇄業務委託⇄正社員の切り替えを年1回申請可能。ライフステージの変化に合わせて働き方を変えられます。</p>
-        </div>
-      </div>
+<section class="lp-section">
+  <div class="lp-section-inner">
+    <div class="section-label" data-reveal>— SUMMARY</div>
+    <h2 class="section-title" data-reveal>募集要項</h2>
+    <p class="section-sub" data-reveal>気になる条件を、ひとめで。詳しくは面談でお気軽にご質問ください。</p>
+    <div class="data-table" data-reveal-stagger>
+      <div class="data-row"><div class="data-key">報酬</div><div class="data-val">未経験：日給/日額 15,000〜18,000円<br>経験者：日給/日額 20,000円〜<br><small>※月収例：未経験 月300,000円〜（月20日稼働）／業務委託の場合は別体系（半年ごとの単価改定）あり</small></div></div>
+      <div class="data-row"><div class="data-key">勤務時間</div><div class="data-val">10:00〜19:00 または 11:00〜20:00<br>実働8時間ぴったり・定時退社（延長なし）</div></div>
+      <div class="data-row"><div class="data-key">休日・休暇</div><div class="data-val">週休2日制（平日シフト制）<br>希望休は月3日まで申請可能（土日祝を除く平日）<br>稼働日数は週3日〜相談可（業務委託契約の場合）</div></div>
+      <div class="data-row"><div class="data-key">勤務地</div><div class="data-val">首都圏（東京・神奈川・千葉・埼玉）<br><strong>北海道全域・静岡全域は急募中</strong><br>直行直帰OK・転勤なし</div></div>
+      <div class="data-row"><div class="data-key">待遇</div><div class="data-val">交通費全額会社負担・出張手当あり<br>個人ノルマなし・研修制度あり<br>雇用形態の柔軟な切り替え制度（年1回申請可）</div></div>
     </div>
   </div>
 </section>
 
-<!-- SUMMARY 募集要項 -->
-<section style="background: var(--white);">
-  <div class="section-inner">
-    <span class="section-label">summary</span>
-    <h2 class="section-title">募集要項</h2>
-    <p class="section-sub">気になる条件を、ひとめで。詳しくは面談でお気軽にご質問ください。</p>
-    <div style="background: var(--cream); border-radius: 24px; overflow: hidden; border: 1px solid rgba(58,46,31,0.06);">
-      <div style="display: grid; grid-template-columns: 200px 1fr; border-bottom: 1px solid rgba(58,46,31,0.08);">
-        <div style="padding: 24px 28px; background: var(--cream-deep); font-weight: 700; font-size: 14px; color: var(--ink);">報酬</div>
-        <div style="padding: 24px 28px; font-size: 14px; color: var(--ink-soft); line-height: 1.9;">未経験:日給/日額 15,000円〜18,000円<br>経験者:日給/日額 20,000円〜<br><span style="font-size: 12px;">※月収例:未経験 月300,000円〜(月20日稼働)</span></div>
-      </div>
-      <div style="display: grid; grid-template-columns: 200px 1fr; border-bottom: 1px solid rgba(58,46,31,0.08);">
-        <div style="padding: 24px 28px; background: var(--cream-deep); font-weight: 700; font-size: 14px; color: var(--ink);">勤務時間</div>
-        <div style="padding: 24px 28px; font-size: 14px; color: var(--ink-soft); line-height: 1.9;">10:00〜19:00 または 11:00〜20:00<br>実働8時間ぴったり・定時退社(延長なし)</div>
-      </div>
-      <div style="display: grid; grid-template-columns: 200px 1fr; border-bottom: 1px solid rgba(58,46,31,0.08);">
-        <div style="padding: 24px 28px; background: var(--cream-deep); font-weight: 700; font-size: 14px; color: var(--ink);">休日・休暇</div>
-        <div style="padding: 24px 28px; font-size: 14px; color: var(--ink-soft); line-height: 1.9;">週休2日制(平日シフト制)<br>希望休は月3日まで申請可能(土日祝を除く平日)<br>稼働日数は週3日〜相談可(契約形態による)</div>
-      </div>
-      <div style="display: grid; grid-template-columns: 200px 1fr; border-bottom: 1px solid rgba(58,46,31,0.08);">
-        <div style="padding: 24px 28px; background: var(--cream-deep); font-weight: 700; font-size: 14px; color: var(--ink);">勤務地</div>
-        <div style="padding: 24px 28px; font-size: 14px; color: var(--ink-soft); line-height: 1.9;">首都圏(東京・神奈川・千葉・埼玉)<br><span style="color: var(--terra); font-weight: 700;">◆ 北海道全域・静岡全域は急募中</span><br>直行直帰OK・転勤なし</div>
-      </div>
-      <div style="display: grid; grid-template-columns: 200px 1fr;">
-        <div style="padding: 24px 28px; background: var(--cream-deep); font-weight: 700; font-size: 14px; color: var(--ink);">待遇</div>
-        <div style="padding: 24px 28px; font-size: 14px; color: var(--ink-soft); line-height: 1.9;">交通費全額会社負担・出張手当あり<br>個人ノルマなし・研修制度あり<br>雇用形態の柔軟な切り替え制度</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="faq">
-  <div class="section-inner">
-    <span class="section-label">faq</span>
-    <h2 class="section-title">気になる、を<br>解消してから。</h2>
-    <p class="section-sub">応募前に多くいただく質問にお答えします。それでも不安なことがあれば、面談で気軽にご相談ください。</p>
-    <div class="faq-list">
+<section class="lp-section alt">
+  <div class="lp-section-inner">
+    <div class="section-label" data-reveal>— FAQ</div>
+    <h2 class="section-title" data-reveal>気になる、を解消してから。</h2>
+    <p class="section-sub" data-reveal>応募前に多くいただく質問にお答えします。それでも不安なことがあれば、面談で気軽にご相談ください。</p>
+    <div class="faq-list" data-reveal-stagger>
       <div class="faq-item">
         <div class="faq-q"><span class="faq-q-text">ブランクがあっても大丈夫ですか?</span><span class="faq-toggle">+</span></div>
         <div class="faq-a"><div class="faq-a-inner">はい、ブランクがある方も歓迎しています。商品知識・接客フロー・実機操作まで、研修期間を通じて段階的に学べる仕組みです。OJT担当が必ず付くので、初日から放置されることはありません。</div></div>
@@ -1118,39 +198,33 @@ footer {
       </div>
       <div class="faq-item">
         <div class="faq-q"><span class="faq-q-text">面接はオンラインでもできますか?</span><span class="faq-toggle">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">はい、オンライン面談に対応しています。お子さまの預け先がない方、移動時間を確保しにくい方も、ご自宅から30分ほどでお話できます。日程は平日昼間・夜間どちらも調整可能です。</div></div>
+        <div class="faq-a"><div class="faq-a-inner">はい、オンライン面談に対応しています。移動時間を確保しにくい方も、ご自宅から30分ほどでお話できます。日程は平日昼間・夜間どちらも調整可能です。</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- APPLY -->
-<section class="apply" id="apply">
-  <div class="apply-inner section-inner">
-    <span class="section-label" style="color: var(--rose);">first step</span>
-    <h2>
-      まずは、<br>
-      <span class="accent">話を聞くだけ、</span>でも。
-    </h2>
-    <p>
-      「自分にもできるかな」「うちの状況でも大丈夫かな」<br>
-      そんな段階のご相談こそ、歓迎しています。<br>
-      30分のオンライン面談で、お互いに向いているか、ゆっくり確認しましょう。
-    </p>
-    <div class="apply-btns">
-      <a href="#" class="btn-apply-main" data-action="apply">WEBで応募する →</a>
-      <a href="#" class="btn-apply-sub" data-action="line">LINEで気軽に相談する</a>
+<section class="apply-section" id="apply">
+  <div class="apply-inner">
+    <div class="section-label" data-reveal>— FIRST STEP</div>
+    <h2 data-reveal>まずは、話を聞くだけでも。</h2>
+    <p data-reveal>「自分にもできるかな」「うちの状況でも大丈夫かな」——そんな段階のご相談こそ、歓迎しています。30分のオンライン面談で、お互いに向いているか、ゆっくり確認しましょう。</p>
+    <div class="apply-btns" data-reveal>
+      <a href="#" class="btn btn-primary" data-action="apply">WEBで応募する →</a>
+      <a href="#" class="btn btn-outline" data-action="line">LINEで気軽に相談する</a>
     </div>
-    <p class="apply-note">※ 応募から最短7日で内定 / 書類選考は1〜3日以内に結果連絡</p>
+    <div class="apply-note">応募 → 面談 → 内定 / 最短7日 / 書類選考は1〜3日以内に結果連絡</div>
   </div>
 </section>
 
-<footer>
-  <div style="margin-bottom: 16px; font-size: 12px; line-height: 1.85; color: rgba(255,255,255,0.72); font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif; letter-spacing: normal;">
-    <strong style="font-weight: 700; color: rgba(255,255,255,0.92);">MinaTech株式会社</strong> ｜ 〒251-0055 神奈川県藤沢市南藤沢3-12 クリオ藤沢駅前 7階<br>
-    TEL <a href="tel:0466960313" style="color: inherit; text-decoration: none;">0466-96-0313</a> ｜ 採用窓口 <a href="mailto:recruit@minatech1210.com" style="color: inherit; text-decoration: none;">recruit@minatech1210.com</a> ｜ 法人番号 9010701041936
+<footer class="lp-footer">
+  <div class="container">
+    <div class="lp-footer-company">
+      <strong>MinaTech株式会社</strong> ｜ 〒251-0055 神奈川県藤沢市南藤沢3-12 クリオ藤沢駅前 7階<br>
+      TEL <a href="tel:0466960313">0466-96-0313</a> ｜ 採用窓口 <a href="mailto:recruit@minatech1210.com">recruit@minatech1210.com</a> ｜ 法人番号 9010701041936
+    </div>
+    <div class="lp-footer-copy">© 2026 MinaTech株式会社</div>
   </div>
-  © 2026 balance. All Rights Reserved.
 </footer>
 
 <script defer src="/assets/config.js"></script>
