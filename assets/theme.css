@@ -1,0 +1,430 @@
+/* MinaTech MobileRecruit — 統一デザインシステム（誠実系）
+ * 全LP + ハブで共有。
+ * カラー: ネイビー / 落ち着いた紺 / クリーム / グレー / 白
+ * フォント: Noto Sans JP（本文）+ Noto Serif JP（見出し・要所）
+ * 派手なアニメーション・マーキー・ノイズは一切なし。
+ */
+
+:root {
+  --color-ink: #0F172A;
+  --color-ink-soft: #475569;
+  --color-ink-mute: #94A3B8;
+  --color-line: #E5E7EB;
+  --color-line-strong: #CBD5E1;
+  --color-bg: #FAF7F2;
+  --color-bg-card: #FFFFFF;
+  --color-bg-alt: #F1EDE5;
+  --color-accent: #1E3A8A;
+  --color-accent-soft: #EEF2FF;
+  --color-accent-deep: #172554;
+  --color-line-brand: #06C755;
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.06);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: hidden; }
+body {
+  font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif;
+  color: var(--color-ink);
+  background: var(--color-bg);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "palt";
+  overflow-x: hidden;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+strong { font-weight: 700; }
+
+.container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+/* ============ Header ============ */
+.lp-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(250, 247, 242, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--color-line);
+}
+.lp-header-inner {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 24px;
+  max-width: 1080px; margin: 0 auto;
+}
+.lp-logo {
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 700; font-size: 17px;
+  color: var(--color-ink);
+  letter-spacing: 0.02em;
+}
+.lp-logo .sub {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 11px; font-weight: 500;
+  color: var(--color-ink-soft);
+  margin-left: 10px;
+  letter-spacing: 0.1em;
+}
+.lp-header-cta {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 22px;
+  background: var(--color-ink);
+  color: white;
+  text-decoration: none;
+  font-weight: 700; font-size: 13px;
+  border-radius: 100px;
+  transition: background 0.2s;
+}
+.lp-header-cta:hover { background: var(--color-accent); }
+
+/* ============ Hero ============ */
+.lp-hero { padding: 88px 24px 72px; }
+.lp-hero-inner { max-width: 1080px; margin: 0 auto; }
+.lp-hero-tag {
+  display: inline-block;
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--color-accent);
+  background: var(--color-accent-soft);
+  padding: 6px 14px; border-radius: 100px;
+  margin-bottom: 28px;
+}
+.lp-hero-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(28px, 4.5vw, 46px);
+  font-weight: 900;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  color: var(--color-ink);
+  margin-bottom: 24px;
+}
+.lp-hero-title .accent { color: var(--color-accent); }
+.lp-hero-sub {
+  font-size: 16.5px;
+  color: var(--color-ink-soft);
+  line-height: 2;
+  max-width: 720px;
+  margin-bottom: 40px;
+}
+.lp-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding: 28px 0;
+  border-top: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-line);
+  margin-bottom: 40px;
+}
+.lp-stat-label {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.15em; color: var(--color-ink-soft);
+  margin-bottom: 6px;
+}
+.lp-stat-val {
+  font-size: 17px; font-weight: 700; color: var(--color-ink);
+  line-height: 1.4;
+}
+.lp-cta-group {
+  display: flex; gap: 14px; flex-wrap: wrap;
+}
+
+/* ============ Buttons ============ */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 15px 32px;
+  border-radius: 100px;
+  font-weight: 700; font-size: 15px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+}
+.btn-primary { background: var(--color-ink); color: white; }
+.btn-primary:hover { background: var(--color-accent); transform: translateY(-1px); }
+.btn-outline { background: transparent; color: var(--color-ink); border-color: var(--color-ink); }
+.btn-outline:hover { background: var(--color-ink); color: white; }
+.btn-line { background: var(--color-line-brand); color: white; }
+.btn-line:hover { background: #05B04D; transform: translateY(-1px); }
+
+/* ============ Sections ============ */
+.lp-section { padding: 72px 24px; }
+.lp-section-inner { max-width: 1080px; margin: 0 auto; }
+.lp-section.alt { background: var(--color-bg-card); border-top: 1px solid var(--color-line); border-bottom: 1px solid var(--color-line); }
+.section-label {
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--color-accent);
+  margin-bottom: 14px;
+}
+.section-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 800;
+  line-height: 1.55;
+  color: var(--color-ink);
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+.section-sub {
+  font-size: 15.5px;
+  color: var(--color-ink-soft);
+  line-height: 1.9;
+  max-width: 720px;
+  margin-bottom: 48px;
+}
+
+/* ============ Reason (WHY) grid ============ */
+.reason-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.reason-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-line);
+  border-radius: 12px;
+  padding: 28px 24px;
+  transition: border-color 0.2s;
+}
+.reason-card:hover { border-color: var(--color-line-strong); }
+.reason-num {
+  font-size: 11px; font-weight: 700;
+  color: var(--color-accent);
+  letter-spacing: 0.15em;
+  margin-bottom: 14px;
+}
+.reason-card h3 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 18px; font-weight: 700;
+  line-height: 1.55;
+  color: var(--color-ink);
+  margin-bottom: 12px;
+}
+.reason-card p {
+  font-size: 14px;
+  color: var(--color-ink-soft);
+  line-height: 1.9;
+}
+
+/* ============ Data table (募集要項) ============ */
+.data-table {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.data-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  border-bottom: 1px solid var(--color-line);
+}
+.data-row:last-child { border-bottom: none; }
+.data-key {
+  padding: 20px 24px;
+  background: var(--color-accent-soft);
+  font-size: 13px; font-weight: 700;
+  color: var(--color-ink);
+}
+.data-val {
+  padding: 20px 24px;
+  font-size: 14px;
+  color: var(--color-ink-soft);
+  line-height: 1.9;
+}
+.data-val strong { color: var(--color-ink); }
+.data-val small { font-size: 12px; }
+
+/* ============ Compare table (雇用形態比較) ============ */
+.compare-wrap { overflow-x: auto; }
+.compare-tbl {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-line);
+  border-radius: 12px;
+  overflow: hidden;
+  min-width: 560px;
+}
+.compare-tbl th, .compare-tbl td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--color-line);
+  text-align: left;
+  font-size: 14px;
+}
+.compare-tbl th {
+  background: var(--color-accent-soft);
+  font-weight: 700; color: var(--color-ink);
+  font-size: 12.5px;
+  letter-spacing: 0.03em;
+}
+.compare-tbl tr:last-child td { border-bottom: none; }
+.compare-tbl td { color: var(--color-ink-soft); }
+.compare-tbl td.emphasis { color: var(--color-ink); font-weight: 700; }
+.compare-note {
+  font-size: 12px; color: var(--color-ink-mute);
+  margin-top: 14px; line-height: 1.7;
+}
+
+/* ============ Timeline (1日の流れ 等) ============ */
+.timeline {
+  max-width: 720px; margin: 0 auto;
+  padding-left: 24px;
+  border-left: 2px solid var(--color-accent-soft);
+}
+.timeline-item { padding: 0 0 32px 24px; position: relative; }
+.timeline-item::before {
+  content: ''; position: absolute; top: 6px; left: -33px;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: white; border: 2px solid var(--color-accent);
+}
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-time {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 18px; font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 6px;
+}
+.timeline-title {
+  font-size: 15px; font-weight: 700;
+  color: var(--color-ink); margin-bottom: 4px;
+}
+.timeline-desc {
+  font-size: 13.5px; color: var(--color-ink-soft);
+  line-height: 1.85;
+}
+
+/* ============ FAQ (functional class names preserved) ============ */
+.faq-list { max-width: 880px; margin: 0 auto; }
+.faq-item {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-line);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+.faq-item:hover { border-color: var(--color-line-strong); }
+.faq-q {
+  padding: 22px 26px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  font-weight: 700; font-size: 15px;
+  color: var(--color-ink);
+}
+.faq-q::before {
+  content: 'Q.';
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 700;
+  color: var(--color-accent);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.faq-q-text { flex: 1; line-height: 1.5; }
+.faq-toggle {
+  width: 28px; height: 28px;
+  border: 1px solid var(--color-line-strong);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.faq-item.open .faq-toggle { transform: rotate(45deg); background: var(--color-ink); color: white; border-color: var(--color-ink); }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 26px;
+}
+.faq-item.open .faq-a { max-height: 500px; padding: 0 26px 22px; }
+.faq-a-inner {
+  padding-left: 32px;
+  color: var(--color-ink-soft);
+  line-height: 1.95;
+  font-size: 14px;
+  border-left: 2px solid var(--color-accent-soft);
+}
+
+/* ============ Apply section ============ */
+.apply-section {
+  background: var(--color-ink);
+  color: white;
+  text-align: center;
+  padding: 80px 24px;
+}
+.apply-inner { max-width: 720px; margin: 0 auto; }
+.apply-section .section-label { color: rgba(255,255,255,0.75); }
+.apply-section h2 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(22px, 3.5vw, 34px);
+  font-weight: 800;
+  color: white;
+  margin-bottom: 20px;
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+}
+.apply-section p {
+  color: rgba(255,255,255,0.8);
+  font-size: 15px;
+  line-height: 1.95;
+  margin-bottom: 36px;
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.apply-btns {
+  display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.apply-section .btn-primary { background: white; color: var(--color-ink); }
+.apply-section .btn-primary:hover { background: var(--color-accent-soft); color: var(--color-ink); transform: translateY(-1px); }
+.apply-section .btn-outline { border-color: rgba(255,255,255,0.4); color: white; }
+.apply-section .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: white; }
+.apply-note {
+  font-size: 12px;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.05em;
+  margin-top: 8px;
+}
+
+/* ============ Footer ============ */
+.lp-footer {
+  background: var(--color-bg-card);
+  border-top: 1px solid var(--color-line);
+  padding: 40px 24px;
+  text-align: center;
+  font-size: 12.5px;
+  color: var(--color-ink-soft);
+  line-height: 1.85;
+}
+.lp-footer-company {
+  margin-bottom: 14px;
+}
+.lp-footer-company strong { color: var(--color-ink); font-weight: 700; }
+.lp-footer-copy {
+  font-size: 11.5px;
+  opacity: 0.75;
+}
+
+/* ============ Responsive ============ */
+@media (max-width: 760px) {
+  .lp-header-inner { padding: 14px 20px; }
+  .lp-hero { padding: 56px 20px 48px; }
+  .lp-hero-title { font-size: clamp(24px, 6.5vw, 32px); }
+  .lp-hero-sub { font-size: 15px; }
+  .lp-hero-stats { grid-template-columns: repeat(2, 1fr); gap: 18px; padding: 20px 0; }
+  .lp-section { padding: 56px 20px; }
+  .reason-grid { grid-template-columns: 1fr; }
+  .data-row { grid-template-columns: 1fr; }
+  .data-key { border-bottom: 1px solid var(--color-line); }
+  .apply-section { padding: 56px 20px; }
+  .apply-btns { flex-direction: column; align-items: stretch; padding: 0 8px; }
+  .btn { justify-content: center; padding: 15px 28px; }
+  .faq-q { padding: 20px 22px; font-size: 14.5px; gap: 12px; }
+  .faq-item.open .faq-a { padding: 0 22px 20px; }
+  .faq-a-inner { padding-left: 18px; }
+}
